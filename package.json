@@ -1,0 +1,22 @@
+{
+  "name": "omni-convert-studio",
+  "version": "1.0.0",
+  "description": "OmniConvert Studio - Universal Offline Document & Media Converter",
+  "main": "main.js",
+  "scripts": {
+    "start": "node server.js",
+    "desktop": "electron ."
+  },
+  "author": "Niraj Kumar, Section Supervisor, RO, Faridabad",
+  "license": "MIT",
+  "keywords": [
+    "converter",
+    "pdf-to-image",
+    "image-to-pdf",
+    "text-to-image",
+    "text-to-pdf",
+    "pdf-to-text",
+    "ocr",
+    "offline"
+  ]
+}

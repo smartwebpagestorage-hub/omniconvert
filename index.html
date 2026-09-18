@@ -1,0 +1,2403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniConvert Studio - Developed by Niraj Kumar, Section Supervisor, RO, Faridabad</title>
+  <meta name="description" content="All-in-one private offline converter suite developed by Niraj Kumar, Section Supervisor, RO, Faridabad: Compress, Convert, Organize, Edit, Sign, Protect. 100% Offline Software for Windows 10 & 11.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="icon" href="assets/icon.png">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- 1. Smallpdf-Style Vertical Left Sidebar -->
+    <aside class="app-sidebar" id="sidebar">
+      <!-- App Brand Logo Icon -->
+      <div class="sidebar-brand" id="sidebar-home-btn" title="OmniConvert Studio - 100% Offline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+          <polyline points="16 3 21 3 21 8"></polyline>
+          <line x1="4" y1="20" x2="21" y2="3"></line>
+          <polyline points="21 16 21 21 16 21"></polyline>
+          <line x1="15" y1="15" x2="21" y2="21"></line>
+          <line x1="4" y1="4" x2="9" y2="9"></line>
+        </svg>
+      </div>
+
+      <!-- Navigation Categories with Flyouts -->
+      <nav class="sidebar-nav">
+
+        <!-- Compress Category -->
+        <div class="nav-item-wrapper active">
+          <button class="sidebar-btn active" data-tool="pdf-compress" title="Compress PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 14h6m-6 4h6m-6-8h6m8 4h6m-6 4h6m-6-8h6M14 4h-4v16h4"/>
+            </svg>
+            <span data-i18n="sidebarCompress">Compress</span>
+          </button>
+        </div>
+
+        <!-- Convert Category (With Flyout) -->
+        <div class="nav-item-wrapper">
+          <button class="sidebar-btn" title="Convert Tools">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="17 1 21 5 17 9"></polyline>
+              <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+              <polyline points="7 23 3 19 7 15"></polyline>
+              <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+            </svg>
+            <span data-i18n="sidebarConvert">Convert</span>
+          </button>
+
+          <!-- Flyout Submenu -->
+          <div class="flyout-menu">
+            <div class="flyout-title">Convert Tools</div>
+            <button class="flyout-item" data-tool="pdf-to-img">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg>
+              <span data-i18n="tabPdfToImg">PDF ➔ Image</span>
+            </button>
+            <button class="flyout-item" data-tool="img-to-pdf">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span data-i18n="tabImgToPdf">Image ➔ PDF</span>
+            </button>
+            <button class="flyout-item" data-tool="text-to-pdf">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span data-i18n="tabTextToPdf">Text ➔ PDF</span>
+            </button>
+            <button class="flyout-item" data-tool="pdf-to-txt">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span data-i18n="tabPdfToTxt">PDF ➔ Text</span>
+            </button>
+            <button class="flyout-item" data-tool="img-to-txt">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              <span data-i18n="tabImgToTxt">Image ➔ Text (OCR)</span>
+            </button>
+            <button class="flyout-item" data-tool="text-to-img">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/></svg>
+              <span data-i18n="tabTextToImg">Text ➔ Image</span>
+            </button>
+            <button class="flyout-item" data-tool="img-conv">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+              <span data-i18n="tabImgConvert">Image ➔ Convert</span>
+            </button>
+            <button class="flyout-item" data-tool="img-split">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              <span data-i18n="tabImgSplit">Image ➔ Split</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Organize Category (With Flyout matching Photo 1 & 3) -->
+        <div class="nav-item-wrapper">
+          <button class="sidebar-btn" title="Organize PDF Pages">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span data-i18n="sidebarOrganize">Organize</span>
+          </button>
+
+          <!-- Flyout Submenu -->
+          <div class="flyout-menu">
+            <div class="flyout-title" data-i18n="sidebarOrganize">Organize</div>
+            <button class="flyout-item" data-tool="pdf-img-merge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+              <span data-i18n="menuMerge">Merge</span>
+            </button>
+            <button class="flyout-item" data-tool="pdf-split">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/></svg>
+              <span data-i18n="menuSplit">Split</span>
+            </button>
+            <button class="flyout-item" data-tool="pdf-rotate">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+              <span data-i18n="menuRotate">Rotate</span>
+            </button>
+            <button class="flyout-item" data-tool="pdf-delete-pages">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+              <span data-i18n="menuDeletePages">Delete Pages</span>
+            </button>
+            <button class="flyout-item" data-tool="pdf-extract-pages">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span data-i18n="menuExtractPages">Extract Pages</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Edit Category (With Flyout matching Photo 4) -->
+        <div class="nav-item-wrapper">
+          <button class="sidebar-btn" title="Edit PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+            <span data-i18n="sidebarEdit">Edit</span>
+          </button>
+
+          <!-- Flyout Submenu -->
+          <div class="flyout-menu">
+            <div class="flyout-title" data-i18n="sidebarEdit">Edit</div>
+            <button class="flyout-item" data-tool="pdf-annotate">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+              <span data-i18n="menuAnnotate">Annotate & Redact</span>
+            </button>
+            <button class="flyout-item" data-tool="pdf-watermark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+              <span data-i18n="menuWatermark">Watermark</span>
+            </button>
+            <button class="flyout-item" data-tool="pdf-number-pages">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+              <span data-i18n="menuNumberPages">Number Pages</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sign Category (With Flyout matching Photo 2) -->
+        <div class="nav-item-wrapper">
+          <button class="sidebar-btn" title="Sign PDF">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 19v-4a2 2 0 0 0-2-2h-3l-3 3-3-3H6a2 2 0 0 0-2 2v4"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span data-i18n="sidebarSign">Sign</span>
+          </button>
+
+          <!-- Flyout Submenu -->
+          <div class="flyout-menu">
+            <div class="flyout-title" data-i18n="sidebarSign">Sign</div>
+            <button class="flyout-item" data-tool="pdf-sign">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="M2 21h12"/><path d="M7 10l5 5"/></svg>
+              <span data-i18n="menuSign">Sign PDF</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- More Category (With Flyout matching Photo 5) -->
+        <div class="nav-item-wrapper">
+          <button class="sidebar-btn" title="More Security Tools">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/>
+            </svg>
+            <span data-i18n="sidebarMore">More</span>
+          </button>
+
+          <!-- Flyout Submenu -->
+          <div class="flyout-menu">
+            <div class="flyout-title" data-i18n="sidebarMore">Security & Utilities</div>
+            <button class="flyout-item" data-tool="pdf-protect">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span data-i18n="menuProtect">Protect (Password)</span>
+            </button>
+            <button class="flyout-item" data-tool="pdf-unlock">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+              <span data-i18n="menuUnlock">Unlock PDF</span>
+            </button>
+            <button class="flyout-item" data-tool="pdf-flatten">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="8 18 12 22 16 18"/><polyline points="8 6 12 2 16 6"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+              <span data-i18n="menuFlatten">Flatten PDF</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Office Category (With Flyout) -->
+        <div class="nav-item-wrapper">
+          <button class="sidebar-btn" title="Office & Administrative Tools">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+            <span data-i18n="sidebarOffice">Office</span>
+          </button>
+
+          <!-- Flyout Submenu -->
+          <div class="flyout-menu">
+            <div class="flyout-title" data-i18n="sidebarOffice">Office & Admin Tools</div>
+            <button class="flyout-item" data-tool="passport-photo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 21v-2a5 5 0 0 1 10 0v2"/></svg>
+              <span data-i18n="menuPassportPhoto">Passport & ID Studio</span>
+            </button>
+            <button class="flyout-item" data-tool="qr-barcode">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              <span data-i18n="menuQrBarcode">QR & Barcode Studio</span>
+            </button>
+            <button class="flyout-item" data-tool="csv-to-pdf">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="10" y1="9" x2="10" y2="9"/></svg>
+              <span data-i18n="menuCsvToPdf">CSV / Table to PDF</span>
+            </button>
+            <button class="flyout-item" data-tool="receipt-generator">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg>
+              <span data-i18n="menuReceiptGen">Receipt & Challan Maker</span>
+            </button>
+            <button class="flyout-item" data-tool="batch-renamer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              <span data-i18n="menuBatchRenamer">Batch File Renamer</span>
+            </button>
+            <button class="flyout-item" data-tool="metadata-cleaner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 12 15 15 10"/></svg>
+              <span data-i18n="menuMetaCleaner">Metadata & Privacy Cleaner</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Online Forms Hub Link Button -->
+        <div class="nav-item-wrapper online-hub-wrapper">
+          <a class="sidebar-btn online-hub-btn" id="btn-online-forms" href="https://smartwebpagestorage-hub.github.io/all-type-fillable-form/" target="_blank" rel="noopener noreferrer" title="All Type Fillable Form Portal (Requires Internet)" style="text-decoration: none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span data-i18n="sidebarFormsHub">Forms Hub</span>
+            <span class="online-indicator-dot" title="Online Portal"></span>
+          </a>
+        </div>
+
+      </nav>
+
+      <!-- Sidebar Bottom: Creator Attribution Button -->
+      <div class="sidebar-bottom">
+        <button id="sidebar-account-btn" class="sidebar-btn" title="Niraj Kumar, Section Supervisor, RO, Faridabad">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span>Account</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- 2. Main Wrapper Area -->
+    <div class="main-wrapper">
+
+      <!-- Topbar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <div class="active-tool-badge">
+            <span id="active-tool-title" class="active-tool-title">PDF Document Compressor</span>
+            <span class="brand-tag">PRO</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Creator attribution badge -->
+          <div class="creator-tag" id="topbar-creator-badge" title="Created by Niraj Kumar, Section Supervisor, RO, Faridabad">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span><strong>Niraj Kumar</strong> • Section Supervisor, RO, Faridabad</span>
+          </div>
+
+          <!-- Fillable Forms Hub Button -->
+          <a id="topbar-forms-btn" class="forms-hub-topbar-btn" href="https://smartwebpagestorage-hub.github.io/all-type-fillable-form/" target="_blank" rel="noopener noreferrer" title="All Type Fillable Form Portal (Requires Internet)" style="text-decoration: none;">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span data-i18n="topbarFormsHub">Fillable Forms Hub</span>
+            <span class="online-indicator-dot"></span>
+          </a>
+
+          <!-- Bilingual Switcher -->
+          <button id="lang-toggle" class="lang-btn" title="Switch Language / भाषा बदलें">
+            <span style="font-weight:700;">🌐 हिंदी</span>
+          </button>
+
+          <!-- About button -->
+          <button id="about-creator-btn" class="lang-btn" title="About Software">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <span data-i18n="aboutBtn">About</span>
+          </button>
+
+          <!-- Theme Toggle -->
+          <button id="theme-toggle" class="theme-btn" title="Toggle Light/Dark Theme">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+      </header>
+
+      <!-- Top Responsive Ad Slot (AdSense / Adsterra / Sponsor) -->
+      <div id="ad-slot-top" class="ad-slot-container" style="display:none;">
+        <div class="ad-badge">SPONSORED / प्रायोजित</div>
+        <div class="ad-frame-wrap" id="ad-content-top">
+          <div class="ad-placeholder-banner">
+            🚀 <strong>OmniConvert Studio</strong> • 100% Free & Fast Offline/Online Document Suite • Created by <strong>Niraj Kumar</strong>, RO, Faridabad
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content Panels -->
+      <main class="main-content" id="main-content">
+
+        <!-- ==================== 1. COMPRESS PDF PANEL ==================== -->
+        <section id="panel-pdf-compress" class="tool-panel active">
+          <div class="tool-header">
+            <h2 data-i18n="compressTitle">PDF Document Compressor</h2>
+            <p data-i18n="compressDesc">Reduce PDF file size by setting exact target limits (500 KB, 1 MB, 2 MB, 4 MB, or Custom MB) with high visual clarity.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Upload & Target Size</h3>
+
+              <div id="compress-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14h6m-6 4h6m-6-8h6m8 4h6m-6 4h6m-6-8h6M14 4h-4v16h4"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4>Choose or Drag & Drop PDF</h4>
+                  <p>Supports multi-page or single-page PDF files</p>
+                </div>
+                <input type="file" id="compress-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div id="compress-file-info" style="display:none; margin: 12px 0; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+              <div style="margin-top: 18px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="control-group">
+                    <label class="control-label" for="compress-target-size" data-i18n="targetSizeLabel">Target File Size</label>
+                    <select id="compress-target-size" class="form-select">
+                      <option value="0">Default Recommended (Optimal Balance)</option>
+                      <option value="500" data-i18n="size500Kb">Under 500 KB</option>
+                      <option value="1024" data-i18n="size1Mb">Under 1 MB</option>
+                      <option value="2048" selected data-i18n="size2Mb">Under 2 MB</option>
+                      <option value="4096" data-i18n="size4Mb">Under 4 MB</option>
+                      <option value="custom" data-i18n="sizeCustom">Custom Size (MB)...</option>
+                    </select>
+                  </div>
+
+                  <div id="compress-custom-size-group" class="control-group" style="display:none;">
+                    <label class="control-label" for="compress-custom-size" data-i18n="customSizeLabel">Max Size (MB)</label>
+                    <input type="number" id="compress-custom-size" class="form-control" min="0.1" max="100" step="0.1" value="2">
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 18px;">
+                  <button id="compress-btn" class="btn btn-primary" style="flex: 1;" disabled>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14h6m-6 4h6m-6-8h6m8 4h6m-6 4h6m-6-8h6M14 4h-4v16h4"/></svg>
+                    Compress PDF
+                  </button>
+                  <button id="compress-download-btn" class="btn btn-emerald" style="display: none;" disabled>
+                    Download Compressed PDF
+                  </button>
+                  <button id="compress-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+                </div>
+
+                <div id="compress-progress" class="progress-bar-container">
+                  <div id="compress-progress-fill" class="progress-bar-fill"></div>
+                </div>
+
+                <div id="compress-status" class="status-message" style="margin-top: 10px;">Upload a PDF above to begin.</div>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Compression Results & Savings</h3>
+              <div id="compress-result-card" style="display: none; margin-top: 10px;">
+                <div id="compress-result-stats"></div>
+              </div>
+              <div id="compress-empty-state" style="text-align: center; color: var(--text-dim); padding: 40px 10px;">
+                Select a PDF file to compress. Results and file size reduction stats will appear here.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 2. ROTATE PDF PANEL ==================== -->
+        <section id="panel-pdf-rotate" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="rotateTitle">Rotate PDF Pages</h2>
+            <p data-i18n="rotateDesc">Rotate specific pages or all pages clockwise or counter-clockwise (90°, 180°, 270°) and save permanently.</p>
+          </div>
+
+          <div class="glass-card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+              <div id="rotate-dropzone" class="dropzone" style="flex: 1; min-width: 260px; padding: 20px;">
+                <div class="dropzone-text">
+                  <h4>Choose or Drop PDF to Rotate</h4>
+                  <p>Loads page thumbnails with instant rotation controls</p>
+                </div>
+                <input type="file" id="rotate-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button id="rotate-cw-all-btn" class="btn btn-secondary" disabled>↻ Rotate All 90° CW</button>
+                <button id="rotate-ccw-all-btn" class="btn btn-secondary" disabled>↺ Rotate All 90° CCW</button>
+                <button id="rotate-save-btn" class="btn btn-primary" disabled>Save Rotated PDF</button>
+                <button id="rotate-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+              </div>
+            </div>
+
+            <div id="rotate-file-info" style="display:none; margin-top: 10px; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+            <div id="rotate-progress" class="progress-bar-container">
+              <div id="rotate-progress-fill" class="progress-bar-fill"></div>
+            </div>
+            <div id="rotate-status" class="status-message" style="margin-top: 10px;">Select a PDF file above to begin.</div>
+          </div>
+
+          <div class="glass-card">
+            <h3 class="card-title">Interactive Page Grid (Click ↺ or ↻ on any card)</h3>
+            <div id="rotate-preview" class="preview-list">
+              <div style="grid-column: 1 / -1; text-align: center; color: var(--text-dim); padding: 40px 10px;">
+                Upload a PDF to view page thumbnails and rotate pages.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 3. DELETE PDF PAGES PANEL ==================== -->
+        <section id="panel-pdf-delete-pages" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="deletePagesTitle">Delete PDF Pages</h2>
+            <p data-i18n="deletePagesDesc">Select and remove unwanted pages from any PDF document with instant visual thumbnail confirmation.</p>
+          </div>
+
+          <div class="glass-card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+              <div id="delete-pages-dropzone" class="dropzone" style="flex: 1; min-width: 260px; padding: 20px;">
+                <div class="dropzone-text">
+                  <h4>Choose or Drop PDF to Remove Pages</h4>
+                  <p>Click on pages to toggle removal</p>
+                </div>
+                <input type="file" id="delete-pages-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                <span id="delete-pages-badge" class="brand-tag">0 marked</span>
+                <button id="delete-pages-all-btn" class="btn btn-secondary" disabled>Select Most</button>
+                <button id="delete-pages-none-btn" class="btn btn-secondary" disabled>Clear Selection</button>
+                <button id="delete-pages-save-btn" class="btn btn-primary" disabled>Remove Pages & Save PDF</button>
+                <button id="delete-pages-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+              </div>
+            </div>
+
+            <div id="delete-pages-file-info" style="display:none; margin-top: 10px; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+            <div id="delete-pages-progress" class="progress-bar-container">
+              <div id="delete-pages-progress-fill" class="progress-bar-fill"></div>
+            </div>
+            <div id="delete-pages-status" class="status-message" style="margin-top: 10px;">Select a PDF file above to begin.</div>
+          </div>
+
+          <div class="glass-card">
+            <h3 class="card-title">Click Any Page to Mark for Deletion</h3>
+            <div id="delete-pages-preview" class="preview-list">
+              <div style="grid-column: 1 / -1; text-align: center; color: var(--text-dim); padding: 40px 10px;">
+                Upload a PDF to view pages and click to delete.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 4. EXTRACT PDF PAGES PANEL ==================== -->
+        <section id="panel-pdf-extract-pages" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="extractPagesTitle">Extract PDF Pages</h2>
+            <p data-i18n="extractPagesDesc">Extract selected pages or custom page ranges into a brand new, independent PDF file.</p>
+          </div>
+
+          <div class="glass-card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+              <div id="extract-dropzone" class="dropzone" style="flex: 1; min-width: 260px; padding: 20px;">
+                <div class="dropzone-text">
+                  <h4>Choose or Drop PDF to Extract Pages</h4>
+                  <p>Select pages visually or specify page ranges</p>
+                </div>
+                <input type="file" id="extract-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                <input type="text" id="extract-range-input" class="form-control" placeholder="Pages e.g. 1-3, 5, 8" style="width: 180px;">
+                <span id="extract-badge" class="brand-tag">0 selected</span>
+                <button id="extract-all-btn" class="btn btn-secondary" disabled>Select All</button>
+                <button id="extract-none-btn" class="btn btn-secondary" disabled>Deselect</button>
+                <button id="extract-btn" class="btn btn-primary" disabled>Extract Pages & Save PDF</button>
+                <button id="extract-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+              </div>
+            </div>
+
+            <div id="extract-file-info" style="display:none; margin-top: 10px; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+            <div id="extract-progress" class="progress-bar-container">
+              <div id="extract-progress-fill" class="progress-bar-fill"></div>
+            </div>
+            <div id="extract-status" class="status-message" style="margin-top: 10px;">Select a PDF file above to begin.</div>
+          </div>
+
+          <div class="glass-card">
+            <h3 class="card-title">Click Pages to Include in Extraction</h3>
+            <div id="extract-preview" class="preview-list">
+              <div style="grid-column: 1 / -1; text-align: center; color: var(--text-dim); padding: 40px 10px;">
+                Upload a PDF to select pages for extraction.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 5. WATERMARK PDF PANEL ==================== -->
+        <section id="panel-pdf-watermark" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="watermarkTitle">PDF Watermark Studio</h2>
+            <p data-i18n="watermarkDesc">Stamp custom text or image watermarks with precise opacity, rotation angle, font size, and color controls.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Upload & Watermark Settings</h3>
+
+              <div id="watermark-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4>Choose or Drop PDF File</h4>
+                  <p>Supports multi-page documents</p>
+                </div>
+                <input type="file" id="watermark-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div id="watermark-file-info" style="display:none; margin: 12px 0; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+              <div style="margin-top: 16px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="control-group">
+                    <label class="control-label" for="watermark-preset">Preset Text</label>
+                    <select id="watermark-preset" class="form-select">
+                      <option value="CONFIDENTIAL" selected>CONFIDENTIAL</option>
+                      <option value="OFFICIAL DOCUMENT">OFFICIAL DOCUMENT</option>
+                      <option value="DRAFT">DRAFT</option>
+                      <option value="DO NOT COPY">DO NOT COPY</option>
+                      <option value="custom">Custom Text...</option>
+                    </select>
+                  </div>
+
+                  <div class="control-group">
+                    <label class="control-label" for="watermark-text">Watermark Text</label>
+                    <input type="text" id="watermark-text" class="form-control" value="CONFIDENTIAL">
+                  </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="control-group">
+                    <label class="control-label" for="watermark-opacity">Opacity: <span id="watermark-opacity-val">30%</span></label>
+                    <input type="range" id="watermark-opacity" min="0.05" max="0.95" step="0.05" value="0.30">
+                  </div>
+
+                  <div class="control-group">
+                    <label class="control-label" for="watermark-angle">Angle: <span id="watermark-angle-val">45°</span></label>
+                    <input type="range" id="watermark-angle" min="-90" max="90" step="5" value="45">
+                  </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="control-group">
+                    <label class="control-label" for="watermark-size">Font Size: <span id="watermark-size-val">50px</span></label>
+                    <input type="range" id="watermark-size" min="16" max="100" step="2" value="50">
+                  </div>
+
+                  <div class="control-group">
+                    <label class="control-label" for="watermark-color">Color</label>
+                    <select id="watermark-color" class="form-select">
+                      <option value="#ef4444" selected>Red Stamp</option>
+                      <option value="#3b82f6">Blue Ink</option>
+                      <option value="#64748b">Slate Gray</option>
+                      <option value="#000000">Solid Black</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 18px;">
+                  <button id="watermark-apply-btn" class="btn btn-primary" style="flex: 1;" disabled>
+                    Apply Watermark & Save PDF
+                  </button>
+                  <button id="watermark-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+                </div>
+
+                <div id="watermark-progress" class="progress-bar-container">
+                  <div id="watermark-progress-fill" class="progress-bar-fill"></div>
+                </div>
+                <div id="watermark-status" class="status-message" style="margin-top: 10px;">Select a PDF file above to begin.</div>
+              </div>
+            </div>
+
+            <div class="glass-card" style="text-align: center;">
+              <h3 class="card-title">Live Preview (Page 1)</h3>
+              <div style="display: flex; justify-content: center; align-items: center; min-height: 380px; background: rgba(0,0,0,0.2); border-radius: var(--radius-md); padding: 12px;">
+                <canvas id="watermark-preview-canvas" style="max-width: 100%; height: auto; box-shadow: var(--shadow-md); border-radius: 4px;"></canvas>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 6. NUMBER PAGES PANEL ==================== -->
+        <section id="panel-pdf-number-pages" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="numberPagesTitle">PDF Page Numbering</h2>
+            <p data-i18n="numberPagesDesc">Add automatic header or footer page numbers across your PDF with customizable formatting and placement.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Upload & Pagination Settings</h3>
+
+              <div id="numbering-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4>Choose or Drop PDF File</h4>
+                  <p>Numbered pages will be automatically calculated</p>
+                </div>
+                <input type="file" id="numbering-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div id="numbering-file-info" style="display:none; margin: 12px 0; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+              <div style="margin-top: 18px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="control-group">
+                    <label class="control-label" for="numbering-format">Number Format</label>
+                    <select id="numbering-format" class="form-select">
+                      <option value="page_of_total" selected>Page X of Y</option>
+                      <option value="num_of_total">X / Y</option>
+                      <option value="page_num">Page X</option>
+                      <option value="num_only">X (Number only)</option>
+                    </select>
+                  </div>
+
+                  <div class="control-group">
+                    <label class="control-label" for="numbering-position">Placement Position</label>
+                    <select id="numbering-position" class="form-select">
+                      <option value="bottom_center" selected>Bottom Center (Standard)</option>
+                      <option value="bottom_right">Bottom Right</option>
+                      <option value="bottom_left">Bottom Left</option>
+                      <option value="top_center">Top Center</option>
+                      <option value="top_right">Top Right</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="control-group">
+                    <label class="control-label" for="numbering-start">Start Page Number</label>
+                    <input type="number" id="numbering-start" class="form-control" value="1" min="1">
+                  </div>
+
+                  <div class="control-group">
+                    <label class="control-label" for="numbering-size">Font Size</label>
+                    <select id="numbering-size" class="form-select">
+                      <option value="9">Small (9 pt)</option>
+                      <option value="11" selected>Standard (11 pt)</option>
+                      <option value="14">Large (14 pt)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                  <button id="numbering-apply-btn" class="btn btn-primary" style="flex: 1;" disabled>
+                    Add Page Numbers & Save PDF
+                  </button>
+                  <button id="numbering-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+                </div>
+
+                <div id="numbering-progress" class="progress-bar-container">
+                  <div id="numbering-progress-fill" class="progress-bar-fill"></div>
+                </div>
+                <div id="numbering-status" class="status-message" style="margin-top: 10px;">Select a PDF file above to begin.</div>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Numbering Preview Guide</h3>
+              <div style="padding: 24px; text-align: center; color: var(--text-muted); line-height: 1.8;">
+                <p>Page numbers are rendered cleanly using vector fonts directly onto the document canvas.</p>
+                <div style="background: rgba(0,0,0,0.25); padding: 18px; border-radius: 8px; margin: 16px 0; border: 1px dashed var(--border-subtle);">
+                  <span style="font-size: 0.9rem; font-weight: bold; color: var(--accent-emerald);">Preview:</span><br>
+                  <span style="font-size: 1.1rem; color: var(--text-main);">"Page 1 of 12"</span>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-dim);">Safe print margins (30pt) are automatically applied to avoid cutting off when printed.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 7. ANNOTATE & REDACT PANEL ==================== -->
+        <section id="panel-pdf-annotate" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="annotateTitle">Annotate & Redact PDF</h2>
+            <p data-i18n="annotateDesc">Blackout confidential information (Redaction), highlight key text, or draw freehand notes directly onto document pages.</p>
+          </div>
+
+          <div class="glass-card" style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+              <div id="annotate-dropzone" class="dropzone" style="flex: 1; min-width: 260px; padding: 18px;">
+                <div class="dropzone-text">
+                  <h4>Choose or Drop PDF to Annotate</h4>
+                  <p>Supports drawing and blackout boxes</p>
+                </div>
+                <input type="file" id="annotate-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <select id="annotate-page-select" class="form-select" style="width: 140px;"></select>
+                <button id="annotate-clear-page-btn" class="btn btn-secondary">Clear Page Marks</button>
+                <button id="annotate-save-btn" class="btn btn-primary" disabled>Burn & Save PDF</button>
+                <button id="annotate-clear-all-btn" class="btn btn-secondary">Clear</button>
+              </div>
+            </div>
+
+            <div id="annotate-file-info" style="display:none; margin-top: 10px; font-size: 0.85rem; color: var(--text-muted);"></div>
+            <div id="annotate-progress" class="progress-bar-container">
+              <div id="annotate-progress-fill" class="progress-bar-fill"></div>
+            </div>
+            <div id="annotate-status" class="status-message" style="margin-top: 10px;">Select a PDF file above to begin.</div>
+          </div>
+
+          <div class="glass-card" style="display: flex; flex-direction: column; align-items: center;">
+            <div class="annotate-toolbar">
+              <button id="annotate-tool-redact" class="tool-chip active">⬛ Redact (Blackout Box)</button>
+              <button id="annotate-tool-highlight" class="tool-chip">🟨 Highlight Marker</button>
+              <button id="annotate-tool-pen" class="tool-chip">✏️ Freehand Pen</button>
+            </div>
+
+            <div class="annotate-container" id="annotate-canvas-container">
+              <div class="annotate-canvas-stack">
+                <canvas id="annotate-base-canvas" class="annotate-base-canvas"></canvas>
+                <canvas id="annotate-draw-canvas" class="annotate-draw-canvas"></canvas>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 8. DIGITAL SIGNATURE PANEL ==================== -->
+        <section id="panel-pdf-sign" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="signTitle">PDF Digital Signature Studio</h2>
+            <p data-i18n="signDesc">Draw your signature, type your name, or upload a signature image, then position and burn it securely onto any page.</p>
+          </div>
+
+          <div class="tool-grid">
+            <!-- Signature Creation Box -->
+            <div class="glass-card">
+              <h3 class="card-title">1. Create Your Digital Signature</h3>
+
+              <div class="signature-pad-wrapper">
+                <canvas id="sign-pad-canvas" class="signature-pad-canvas" width="400" height="180"></canvas>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                <span style="font-size: 0.75rem; color: var(--text-dim);">Draw using mouse or touchscreen</span>
+                <button id="sign-pad-clear" class="btn btn-secondary btn-sm">Clear Pad</button>
+              </div>
+
+              <div style="margin-top: 16px; border-top: 1px solid var(--border-subtle); padding-top: 14px;">
+                <label class="control-label">Or Type Name (Script Font):</label>
+                <div style="display: flex; gap: 8px;">
+                  <input type="text" id="sign-type-input" class="form-control" placeholder="Type your full name...">
+                  <button id="sign-type-apply" class="btn btn-secondary">Generate</button>
+                </div>
+              </div>
+
+              <div style="margin-top: 14px;">
+                <label class="control-label">Or Upload Signature Image (PNG):</label>
+                <input type="file" id="sign-upload-file" class="form-control" accept="image/png,image/jpeg">
+              </div>
+
+              <div style="margin-top: 14px; text-align: center;">
+                <img id="sign-preview-img" style="display:none; max-height: 60px; margin: 0 auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));" alt="Signature Preview">
+              </div>
+            </div>
+
+            <!-- PDF Placement Box -->
+            <div class="glass-card">
+              <h3 class="card-title">2. Choose Document & Position Signature</h3>
+
+              <div id="sign-dropzone" class="dropzone" style="padding: 20px;">
+                <div class="dropzone-text">
+                  <h4>Choose or Drop PDF to Sign</h4>
+                  <p>Click anywhere on the preview to position signature</p>
+                </div>
+                <input type="file" id="sign-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div id="sign-file-info" style="display:none; margin: 10px 0; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+              <div style="margin-top: 12px; display: flex; gap: 12px; align-items: center;">
+                <label class="control-label" style="margin: 0;">Target Page:</label>
+                <select id="sign-page-select" class="form-select" style="width: 140px;"></select>
+                <button id="sign-apply-btn" class="btn btn-primary" style="flex: 1;" disabled>Apply Signature & Save</button>
+                <button id="sign-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+              </div>
+
+              <div id="sign-progress" class="progress-bar-container">
+                <div id="sign-progress-fill" class="progress-bar-fill"></div>
+              </div>
+              <div id="sign-status" class="status-message" style="margin-top: 10px;">Select a PDF file above to begin.</div>
+
+              <!-- Interactive Document Preview Canvas -->
+              <div style="margin-top: 14px; background: rgba(0,0,0,0.25); border-radius: var(--radius-md); padding: 12px; display: flex; justify-content: center; overflow: auto; max-height: 400px;">
+                <canvas id="sign-doc-canvas" style="box-shadow: var(--shadow-md); border-radius: 4px; cursor: crosshair; max-width: 100%; height: auto;"></canvas>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 9. PROTECT PDF (ENCRYPT) PANEL ==================== -->
+        <section id="panel-pdf-protect" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="protectTitle">Password Protect PDF</h2>
+            <p data-i18n="protectDesc">Encrypt your PDF document with strong password protection so only authorized recipients can open it.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Upload & Password Settings</h3>
+
+              <div id="protect-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4>Choose or Drop PDF to Encrypt</h4>
+                  <p>128-bit client-side password security</p>
+                </div>
+                <input type="file" id="protect-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div id="protect-file-info" style="display:none; margin: 12px 0; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+              <div style="margin-top: 18px;">
+                <div class="control-group">
+                  <label class="control-label" for="protect-password">Set Password</label>
+                  <input type="password" id="protect-password" class="form-control" placeholder="Enter secure password">
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="protect-password-confirm">Confirm Password</label>
+                  <input type="password" id="protect-password-confirm" class="form-control" placeholder="Re-enter password">
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                  <button id="protect-btn" class="btn btn-primary" style="flex: 1;" disabled>
+                    Encrypt & Protect PDF
+                  </button>
+                  <button id="protect-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+                </div>
+
+                <div id="protect-status" class="status-message" style="margin-top: 10px;">Upload a PDF above to protect.</div>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Document Security Information</h3>
+              <div style="padding: 20px; color: var(--text-muted); line-height: 1.8;">
+                <p><strong>100% Offline Encryption:</strong> Your password and documents never leave your computer.</p>
+                <ul style="margin: 16px 0 16px 20px; font-size: 0.9rem;">
+                  <li>Recipients will be prompted for this password in Adobe Acrobat, Chrome, Edge, or phone PDF viewers.</li>
+                  <li>Prevents unauthorized printing, text copying, or modification.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 10. UNLOCK PDF (DECRYPT) PANEL ==================== -->
+        <section id="panel-pdf-unlock" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="unlockTitle">Unlock & Decrypt PDF</h2>
+            <p data-i18n="unlockDesc">Remove password protection from any PDF file by entering its password, making it permanently unlocked.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Upload & Unlock Document</h3>
+
+              <div id="unlock-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4>Choose or Drop Locked PDF</h4>
+                  <p>Enter password to decrypt permanently</p>
+                </div>
+                <input type="file" id="unlock-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div id="unlock-file-info" style="display:none; margin: 12px 0; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+              <div style="margin-top: 18px;">
+                <div class="control-group">
+                  <label class="control-label" for="unlock-password">Current Document Password</label>
+                  <input type="password" id="unlock-password" class="form-control" placeholder="Enter document password">
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                  <button id="unlock-btn" class="btn btn-primary" style="flex: 1;" disabled>
+                    Unlock & Save Decrypted PDF
+                  </button>
+                  <button id="unlock-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+                </div>
+
+                <div id="unlock-status" class="status-message" style="margin-top: 10px;">Upload a locked PDF above to begin.</div>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Unlock Guidelines</h3>
+              <div style="padding: 20px; color: var(--text-muted); line-height: 1.8;">
+                <p>This tool decrypts password-protected PDFs and exports an unlocked, clean document that can be viewed anywhere without prompts.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 11. FLATTEN PDF PANEL ==================== -->
+        <section id="panel-pdf-flatten" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="flattenTitle">Flatten PDF Forms & Layers</h2>
+            <p data-i18n="flattenDesc">Flatten interactive fillable form fields and annotation layers into non-editable static PDF pages.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Upload & Flatten Document</h3>
+
+              <div id="flatten-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="8 18 12 22 16 18"/><polyline points="8 6 12 2 16 6"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4>Choose or Drop Fillable PDF</h4>
+                  <p>Bakes all fillable text and annotations permanently</p>
+                </div>
+                <input type="file" id="flatten-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div id="flatten-file-info" style="display:none; margin: 12px 0; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+              <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button id="flatten-btn" class="btn btn-primary" style="flex: 1;" disabled>
+                  Flatten PDF Document
+                </button>
+                <button id="flatten-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+              </div>
+
+              <div id="flatten-status" class="status-message" style="margin-top: 10px;">Upload a PDF above to flatten.</div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Why Flatten PDFs?</h3>
+              <div style="padding: 20px; color: var(--text-muted); line-height: 1.8;">
+                <p>Flattening locks all interactive elements, signatures, form checkboxes, and annotations into the underlying page graphics so nobody can modify or tamper with filled data.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 12. PDF TO IMAGE PANEL ==================== -->
+        <section id="panel-pdf-to-img" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="pdfToImgTitle">PDF ➔ Image Converter</h2>
+            <p data-i18n="pdfToImgDesc">Render any PDF document into crisp images. Download individual pages as PNG, JPEG, or WebP, or download all pages in a single ZIP archive.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title" data-i18n="pdfToImgCardUpload">Upload & Render Settings</h3>
+
+              <div id="pdf-to-img-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4 data-i18n="pdfToImgDropTitle">Choose or Drag & Drop a PDF</h4>
+                  <p data-i18n="pdfToImgDropSubtitle">Supports multi-page or single-page PDF files</p>
+                </div>
+                <input type="file" id="pdf-to-img-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div id="pdf-to-img-file-info" style="display:none; margin: 12px 0; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+              <div style="margin-top: 18px;">
+                <div class="control-group">
+                  <label class="control-label" for="pdf-to-img-format">Output Image Format</label>
+                  <select id="pdf-to-img-format" class="form-select">
+                    <option value="image/png">PNG (Lossless & High Quality)</option>
+                    <option value="image/jpeg">JPEG (Compressed Photo)</option>
+                    <option value="image/webp">WebP (Modern Compact Web Format)</option>
+                  </select>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="pdf-to-img-scale">Render Resolution / DPI</label>
+                  <select id="pdf-to-img-scale" class="form-select">
+                    <option value="1.0">1x (Standard Screen, Fast)</option>
+                    <option value="2.0" selected>2x (High Definition, Crisp 150-192 DPI)</option>
+                    <option value="3.0">3x (Ultra Print Resolution, 300 DPI)</option>
+                  </select>
+                </div>
+
+                <div class="control-group" id="pdf-to-img-quality-group" style="display:none;">
+                  <label class="control-label" for="pdf-to-img-quality">Compression Quality</label>
+                  <div class="range-slider-wrapper">
+                    <input type="range" id="pdf-to-img-quality" min="0.5" max="1.0" step="0.05" value="0.9">
+                    <span id="pdf-to-img-quality-val" class="slider-value">90%</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                  <button id="pdf-to-img-convert-btn" class="btn btn-primary" style="flex: 1;" disabled>
+                    Convert Pages
+                  </button>
+                  <button id="pdf-to-img-download-all-btn" class="btn btn-emerald" disabled>
+                    Download All (ZIP)
+                  </button>
+                </div>
+
+                <div id="pdf-to-img-progress" class="progress-bar-container">
+                  <div id="pdf-to-img-progress-fill" class="progress-bar-fill"></div>
+                </div>
+
+                <div id="pdf-to-img-status" class="status-message" style="margin-top: 10px;">Select a PDF file above to begin.</div>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Converted Page Previews</h3>
+              <div id="pdf-to-img-preview" class="preview-list">
+                <div style="grid-column: 1 / -1; text-align: center; color: var(--text-dim); padding: 40px 10px;">
+                  No converted pages yet. Upload a PDF and click Convert to see page thumbnails here.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 13. IMAGE TO PDF PANEL ==================== -->
+        <section id="panel-img-to-pdf" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="imgToPdfTitle">Image ➔ PDF Converter</h2>
+            <p data-i18n="imgToPdfDesc">Combine multiple images (PNG, JPG, WebP, SVG) into a single, clean PDF document. Reorder pages and customize layout settings.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">
+                <span data-i18n="imgToPdfCardUpload">Upload Images</span>
+                <span id="img-to-pdf-count" class="brand-tag">0 images</span>
+              </h3>
+
+              <div id="img-to-pdf-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4 data-i18n="imgToPdfDropTitle">Choose or Drag & Drop Images</h4>
+                  <p data-i18n="imgToPdfDropSubtitle">Supports multiple JPG, PNG, WebP, and GIF files</p>
+                </div>
+                <input type="file" id="img-to-pdf-file" accept="image/*" multiple>
+              </div>
+
+              <div style="margin-top: 18px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="control-group">
+                    <label class="control-label" for="img-to-pdf-size">Page Size</label>
+                    <select id="img-to-pdf-size" class="form-select">
+                      <option value="a4" selected>A4 (Standard)</option>
+                      <option value="letter">US Letter</option>
+                      <option value="fit">Fit Page to Image Dimensions</option>
+                    </select>
+                  </div>
+
+                  <div class="control-group">
+                    <label class="control-label" for="img-to-pdf-orientation">Orientation</label>
+                    <select id="img-to-pdf-orientation" class="form-select">
+                      <option value="auto" selected>Auto (Based on Image)</option>
+                      <option value="p">Portrait</option>
+                      <option value="l">Landscape</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="control-group">
+                    <label class="control-label" for="img-to-pdf-margin">Page Margins</label>
+                    <select id="img-to-pdf-margin" class="form-select">
+                      <option value="0" selected>No Margin (Full Page)</option>
+                      <option value="10">Small (10mm)</option>
+                      <option value="20">Normal (20mm)</option>
+                    </select>
+                  </div>
+
+                  <div class="control-group">
+                    <label class="control-label" for="img-to-pdf-fit" data-i18n="imgToPdfLblFit">Image Scaling</label>
+                    <select id="img-to-pdf-fit" class="form-select">
+                      <option value="fit" selected data-i18n="fitKeepAspect">Fit (Keep Aspect Ratio)</option>
+                      <option value="fill" data-i18n="fitFillPage">Fill Entire Page Area</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Target File Size Control -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="control-group">
+                    <label class="control-label" for="img-to-pdf-target-size" data-i18n="targetSizeLabel">Target File Size</label>
+                    <select id="img-to-pdf-target-size" class="form-select">
+                      <option value="0" selected data-i18n="sizeNoLimit">Original / No Limit</option>
+                      <option value="500" data-i18n="size500Kb">Under 500 KB</option>
+                      <option value="1024" data-i18n="size1Mb">Under 1 MB</option>
+                      <option value="2048" data-i18n="size2Mb">Under 2 MB</option>
+                      <option value="4096" data-i18n="size4Mb">Under 4 MB</option>
+                      <option value="custom" data-i18n="sizeCustom">Custom Size (MB)...</option>
+                    </select>
+                  </div>
+
+                  <div id="img-to-pdf-custom-size-group" class="control-group" style="display: none;">
+                    <label class="control-label" for="img-to-pdf-custom-size" data-i18n="customSizeLabel">Max Size (MB)</label>
+                    <input type="number" id="img-to-pdf-custom-size" class="form-control" min="0.1" max="100" step="0.1" value="2">
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="img-to-pdf-filename" data-i18n="imgToPdfLblFilename">Output PDF Filename</label>
+                  <input type="text" id="img-to-pdf-filename" class="form-control" value="compiled_images" placeholder="Filename without .pdf">
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 16px;">
+                  <button id="img-to-pdf-generate-btn" class="btn btn-primary" style="flex: 1;" disabled>
+                    Generate & Save PDF
+                  </button>
+                  <button id="img-to-pdf-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+                </div>
+
+                <div id="img-to-pdf-progress" class="progress-bar-container">
+                  <div id="img-to-pdf-progress-fill" class="progress-bar-fill"></div>
+                </div>
+
+                <div id="img-to-pdf-status" class="status-message" style="margin-top: 10px;">Select or drop images above to begin.</div>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Page Order & Thumbnails</h3>
+              <p style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 12px;">Use the arrow buttons to reorder pages in your PDF.</p>
+              <div id="img-to-pdf-preview" class="preview-list">
+                <div style="grid-column: 1 / -1; text-align: center; color: var(--text-dim); padding: 40px 10px;">
+                  No images uploaded yet. Drop some images to preview and reorder pages.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 14. TEXT TO IMAGE PANEL ==================== -->
+        <section id="panel-text-to-img" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="textToImgTitle">Text ➔ Image Studio</h2>
+            <p data-i18n="textToImgDesc">Turn quotes, announcements, or notes into shareable graphics with custom typography and modern gradients.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title" data-i18n="textToImgCardControls">Graphic Controls</h3>
+              <div class="control-group">
+                <label class="control-label" for="text-to-img-content" data-i18n="textToImgLblContent">Your Text / Message</label>
+                <textarea id="text-to-img-content" class="form-control" rows="4" placeholder="Type your inspirational quote or message here..."></textarea>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label" for="text-to-img-author" data-i18n="textToImgLblAuthor">Author / Subtitle (Optional)</label>
+                <input type="text" id="text-to-img-author" class="form-control" placeholder="- Author or Department">
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="control-group">
+                  <label class="control-label" for="text-to-img-ratio">Aspect Ratio</label>
+                  <select id="text-to-img-ratio" class="form-select">
+                    <option value="1:1" selected>1:1 Square</option>
+                    <option value="16:9">16:9 Banner</option>
+                    <option value="9:16">9:16 Story / Reel</option>
+                    <option value="4:5">4:5 Portrait</option>
+                  </select>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="text-to-img-theme">Theme</label>
+                  <select id="text-to-img-theme" class="form-select">
+                    <option value="cosmic" selected>Cosmic Indigo</option>
+                    <option value="sunset">Sunset Glow</option>
+                    <option value="emerald">Emerald Forest</option>
+                    <option value="dark">Deep Obsidian</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 10px; margin-top: 18px;">
+                <button id="text-to-img-dl-png" class="btn btn-primary" style="flex: 1;">Download PNG</button>
+                <button id="text-to-img-dl-jpg" class="btn btn-secondary" style="flex: 1;">Download JPG</button>
+              </div>
+            </div>
+
+            <div class="glass-card" style="text-align: center;">
+              <h3 class="card-title" data-i18n="textToImgCardPreview">Live Canvas Preview</h3>
+              <canvas id="text-to-img-canvas" style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-md);"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 15. TEXT TO PDF PANEL ==================== -->
+        <section id="panel-text-to-pdf" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="textToPdfTitle">Text ➔ PDF Document Generator</h2>
+            <p data-i18n="textToPdfDesc">Type or paste text, format margins, and export clean, multi-page PDFs with automatic pagination.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Document Content</h3>
+              <div class="control-group">
+                <label class="control-label" for="text-to-pdf-title">Document Title</label>
+                <input type="text" id="text-to-pdf-title" class="form-control" placeholder="Document Title (Header)">
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="text-to-pdf-body">Document Body</label>
+                <textarea id="text-to-pdf-body" class="form-control" rows="10" placeholder="Type or paste your document body text here... Supports both English and Hindi."></textarea>
+              </div>
+
+              <div style="display: flex; gap: 10px; margin-top: 18px;">
+                <button id="text-to-pdf-export-btn" class="btn btn-primary" style="flex: 1;">Export as PDF</button>
+                <button id="text-to-pdf-clear-btn" class="btn btn-secondary">Clear</button>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Typography & Layout</h3>
+              <div class="control-group">
+                <label class="control-label" for="text-to-pdf-size">Page Size</label>
+                <select id="text-to-pdf-size" class="form-select">
+                  <option value="a4" selected>A4 (Standard)</option>
+                  <option value="letter">US Letter</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label class="control-label" for="text-to-pdf-font-size">Font Size</label>
+                <select id="text-to-pdf-font-size" class="form-select">
+                  <option value="10">10 pt (Compact)</option>
+                  <option value="12" selected>12 pt (Standard)</option>
+                  <option value="14">14 pt (Large)</option>
+                </select>
+              </div>
+              <div id="text-to-pdf-status" class="status-message" style="margin-top: 14px;">Ready to generate PDF document.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 16. PDF TO TEXT PANEL ==================== -->
+        <section id="panel-pdf-to-txt" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="pdfToTxtTitle">PDF ➔ Text Extractor</h2>
+            <p data-i18n="pdfToTxtDesc">Extract selectable plain text from any PDF document. Search, copy to clipboard, or export to TXT.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Upload PDF</h3>
+              <div id="pdf-to-txt-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4>Choose or Drop PDF File</h4>
+                  <p>Extracts text layers instantly</p>
+                </div>
+                <input type="file" id="pdf-to-txt-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div id="pdf-to-txt-file-info" style="display:none; margin: 12px 0; font-size: 0.85rem; color: var(--text-muted);"></div>
+              <div id="pdf-to-txt-status" class="status-message" style="margin-top: 10px;">Select a PDF file above to begin.</div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Extracted Plain Text</h3>
+              <textarea id="pdf-to-txt-output" class="form-control" rows="12" placeholder="Extracted text will appear here..." readonly></textarea>
+              <div style="display: flex; gap: 10px; margin-top: 14px;">
+                <button id="pdf-to-txt-copy-btn" class="btn btn-secondary" disabled>Copy Text</button>
+                <button id="pdf-to-txt-download-btn" class="btn btn-primary" disabled>Download .txt</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 17. IMAGE TO TEXT (OCR) PANEL ==================== -->
+        <section id="panel-img-to-txt" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="imgToTxtTitle">Image ➔ Text (Optical Character Recognition)</h2>
+            <p data-i18n="imgToTxtDesc">Extract editable text from scanned documents, photos, book pages, and screenshots right in your browser.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Upload Image for OCR</h3>
+              <div id="img-to-txt-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4>Choose or Drop Image</h4>
+                  <p>Supports PNG, JPG, WebP photos & screenshots</p>
+                </div>
+                <input type="file" id="img-to-txt-file" accept="image/*">
+              </div>
+
+              <div id="img-to-txt-file-info" style="display:none; margin: 12px 0; font-size: 0.85rem; color: var(--text-muted);"></div>
+              <div id="img-to-txt-progress" class="progress-bar-container">
+                <div id="img-to-txt-progress-fill" class="progress-bar-fill"></div>
+              </div>
+              <div id="img-to-txt-status" class="status-message" style="margin-top: 10px;">Select an image above to start OCR.</div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Recognized Text Output</h3>
+              <textarea id="img-to-txt-output" class="form-control" rows="12" placeholder="Recognized text will appear here..." readonly></textarea>
+              <div style="display: flex; gap: 10px; margin-top: 14px;">
+                <button id="img-to-txt-copy-btn" class="btn btn-secondary" disabled>Copy Text</button>
+                <button id="img-to-txt-download-btn" class="btn btn-primary" disabled>Download .txt</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 18. PDF SPLIT PANEL ==================== -->
+        <section id="panel-pdf-split" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="pdfSplitTitle">PDF Page Splitter</h2>
+            <p data-i18n="pdfSplitDesc">Split multi-page PDF documents into individual single-page files or extract custom page ranges effortlessly.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title" data-i18n="pdfSplitCardUpload">Upload & Split Settings</h3>
+
+              <div id="pdf-split-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4 data-i18n="pdfSplitDropTitle">Choose or Drag & Drop a PDF</h4>
+                  <p data-i18n="pdfSplitDropSubtitle">Supports multi-page PDF documents</p>
+                </div>
+                <input type="file" id="pdf-split-file" accept=".pdf,application/pdf">
+              </div>
+
+              <div id="pdf-split-file-info" style="display:none; margin: 12px 0; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+              <div style="margin-top: 18px;">
+                <div class="control-group">
+                  <label class="control-label" for="pdf-split-mode" data-i18n="pdfSplitLblMode">Split Mode</label>
+                  <select id="pdf-split-mode" class="form-select">
+                    <option value="all" selected data-i18n="pdfSplitModeAll">Split into Single Pages (ZIP)</option>
+                    <option value="range" data-i18n="pdfSplitModeRange">Extract Custom Page Range</option>
+                  </select>
+                </div>
+
+                <div class="control-group" id="pdf-split-range-group" style="display: none;">
+                  <label class="control-label" for="pdf-split-range" data-i18n="pdfSplitLblRange">Page Range (e.g. 1-3, 5, 8-10)</label>
+                  <input type="text" id="pdf-split-range" class="form-control" placeholder="e.g. 1-3, 5, 8">
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                  <button id="pdf-split-btn" class="btn btn-primary" style="flex: 1;" disabled>
+                    <span data-i18n="btnSplitPdf">Split PDF</span>
+                  </button>
+                  <button id="pdf-split-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+                </div>
+
+                <div id="pdf-split-progress" class="progress-bar-container">
+                  <div id="pdf-split-progress-fill" class="progress-bar-fill"></div>
+                </div>
+
+                <div id="pdf-split-status" class="status-message" style="margin-top: 10px;">Select a PDF file above to begin.</div>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title" data-i18n="pdfSplitCardPreview">Document Pages Preview</h3>
+              <div id="pdf-split-preview" class="preview-list">
+                <div style="grid-column: 1 / -1; text-align: center; color: var(--text-dim); padding: 40px 10px;">
+                  Upload a PDF to view all page previews before splitting.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 19. IMAGE SPLIT PANEL ==================== -->
+        <section id="panel-img-split" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="imgSplitTitle">Image Splitter & Slicer</h2>
+            <p data-i18n="imgSplitDesc">Slice images into social media grids (2x2, 3x3), horizontal sections, or vertical panels with instant ZIP download.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title" data-i18n="imgSplitCardUpload">Upload Image to Split</h3>
+
+              <div id="img-split-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4 data-i18n="imgSplitDropTitle">Choose or Drag & Drop Image</h4>
+                  <p data-i18n="imgSplitDropSubtitle">Supports JPG, PNG, and WebP images</p>
+                </div>
+                <input type="file" id="img-split-file" accept="image/*">
+              </div>
+
+              <div id="img-split-file-info" style="display:none; margin: 12px 0; font-size: 0.85rem; color: var(--text-muted);"></div>
+
+              <div style="margin-top: 18px;">
+                <div class="control-group">
+                  <label class="control-label" for="img-split-grid" data-i18n="imgSplitLblGrid">Split Layout</label>
+                  <select id="img-split-grid" class="form-select">
+                    <option value="2x2" selected data-i18n="imgSplitGrid2x2">2x2 Grid (4 Parts)</option>
+                    <option value="3x3" data-i18n="imgSplitGrid3x3">3x3 Grid (9 Parts)</option>
+                    <option value="1x3" data-i18n="imgSplitGrid1x3">1x3 Vertical Strips (3 Parts)</option>
+                    <option value="3x1" data-i18n="imgSplitGrid3x1">3x1 Horizontal Panels (3 Parts)</option>
+                  </select>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                  <button id="img-split-btn" class="btn btn-primary" style="flex: 1;" disabled>
+                    <span data-i18n="btnSplitImg">Split Image</span>
+                  </button>
+                  <button id="img-split-dl-all-btn" class="btn btn-emerald" disabled>
+                    <span data-i18n="btnDownloadAllTiles">Download All (ZIP)</span>
+                  </button>
+                  <button id="img-split-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+                </div>
+
+                <div id="img-split-status" class="status-message" style="margin-top: 10px;">Select an image above to begin.</div>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title" data-i18n="imgSplitCardTilesPreview">Sliced Tiles Preview</h3>
+              <div id="img-split-tiles" class="preview-list">
+                <div style="grid-column: 1 / -1; text-align: center; color: var(--text-dim); padding: 40px 10px;">
+                  Sliced image tiles will appear here for download.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 20. PDF & IMAGE MERGE PANEL ==================== -->
+        <section id="panel-pdf-img-merge" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="pdfImgMergeTitle">PDF & Image Combined Merger</h2>
+            <p data-i18n="pdfImgMergeDesc">Combine multiple PDF documents and Images together into a single unified PDF file. Reorder pages freely.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">
+                <span data-i18n="pdfImgMergeCardUpload">Upload PDFs & Images</span>
+                <span id="pdf-img-merge-count" class="brand-tag">0 pages</span>
+              </h3>
+
+              <div id="pdf-img-merge-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4 data-i18n="pdfImgMergeDropTitle">Choose or Drag & Drop PDFs and Images</h4>
+                  <p data-i18n="pdfImgMergeDropSubtitle">Supports multi-page PDFs, JPG, PNG, WebP simultaneously</p>
+                </div>
+                <input type="file" id="pdf-img-merge-file" accept=".pdf,image/*" multiple>
+              </div>
+
+              <div style="margin-top: 18px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="control-group">
+                    <label class="control-label" for="pdf-img-merge-size">Page Size</label>
+                    <select id="pdf-img-merge-size" class="form-select">
+                      <option value="a4" selected>A4 (Standard)</option>
+                      <option value="letter">US Letter</option>
+                      <option value="fit">Fit to Image Size</option>
+                    </select>
+                  </div>
+
+                  <div class="control-group">
+                    <label class="control-label" for="pdf-img-merge-filename" data-i18n="imgToPdfLblFilename">Output Filename</label>
+                    <input type="text" id="pdf-img-merge-filename" class="form-control" value="combined_document" placeholder="Filename without .pdf">
+                  </div>
+                </div>
+
+                <!-- Target File Size Control -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px;">
+                  <div class="control-group">
+                    <label class="control-label" for="pdf-img-merge-target-size" data-i18n="targetSizeLabel">Target File Size</label>
+                    <select id="pdf-img-merge-target-size" class="form-select">
+                      <option value="0" selected data-i18n="sizeNoLimit">Original / No Limit</option>
+                      <option value="500" data-i18n="size500Kb">Under 500 KB</option>
+                      <option value="1024" data-i18n="size1Mb">Under 1 MB</option>
+                      <option value="2048" data-i18n="size2Mb">Under 2 MB</option>
+                      <option value="4096" data-i18n="size4Mb">Under 4 MB</option>
+                      <option value="custom" data-i18n="sizeCustom">Custom Size (MB)...</option>
+                    </select>
+                  </div>
+
+                  <div id="pdf-img-merge-custom-size-group" class="control-group" style="display: none;">
+                    <label class="control-label" for="pdf-img-merge-custom-size" data-i18n="customSizeLabel">Max Size (MB)</label>
+                    <input type="number" id="pdf-img-merge-custom-size" class="form-control" min="0.1" max="100" step="0.1" value="2">
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 18px;">
+                  <button id="pdf-img-merge-btn" class="btn btn-primary" style="flex: 1;" disabled>
+                    <span data-i18n="btnMergePdfImg">Merge Everything into Single PDF</span>
+                  </button>
+                  <button id="pdf-img-merge-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+                </div>
+
+                <div id="pdf-img-merge-progress" class="progress-bar-container">
+                  <div id="pdf-img-merge-progress-fill" class="progress-bar-fill"></div>
+                </div>
+
+                <div id="pdf-img-merge-status" class="status-message" style="margin-top: 10px;">Select or drop PDFs and Images above to begin.</div>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title" data-i18n="pdfImgMergeCardPreview">Unified Page Storyboard</h3>
+              <p style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 12px;">Use arrows to reorder PDF pages and images into your desired final sequence.</p>
+              <div id="pdf-img-merge-preview" class="preview-list">
+                <div style="grid-column: 1 / -1; text-align: center; color: var(--text-dim); padding: 40px 10px;">
+                  No items uploaded yet. Drop PDFs and images to arrange pages.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 21. IMAGE FORMAT CONVERTER PANEL ==================== -->
+        <section id="panel-img-conv" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="imgConvTitle">Image Format Converter & Compressor</h2>
+            <p data-i18n="imgConvDesc">Convert images between PNG, JPEG, and WebP formats with adjustable compression quality to reduce file sizes.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title" data-i18n="imgConvCardUpload">Upload Images</h3>
+
+              <div id="img-conv-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4 data-i18n="imgConvDropTitle">Choose or Drag & Drop Images</h4>
+                  <p data-i18n="imgConvDropSubtitle">Supports multiple images simultaneously</p>
+                </div>
+                <input type="file" id="img-conv-file" accept="image/*" multiple>
+              </div>
+
+              <div style="margin-top: 18px;">
+                <div class="control-group">
+                  <label class="control-label" for="img-conv-format" data-i18n="imgConvLblFormat">Target Image Format</label>
+                  <select id="img-conv-format" class="form-select">
+                    <option value="image/jpeg" selected>JPEG (Photos & Smaller Size)</option>
+                    <option value="image/png">PNG (Lossless Quality)</option>
+                    <option value="image/webp">WebP (Modern Compact Web Format)</option>
+                  </select>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label" for="img-conv-quality" data-i18n="imgConvLblQuality">Compression Quality</label>
+                  <div class="range-slider-wrapper">
+                    <input type="range" id="img-conv-quality" min="0.1" max="1.0" step="0.05" value="0.85">
+                    <span id="img-conv-quality-val" class="slider-value">85%</span>
+                  </div>
+                </div>
+
+                <!-- Target File Size Control -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="control-group">
+                    <label class="control-label" for="img-conv-target-size" data-i18n="targetSizeLabel">Target File Size</label>
+                    <select id="img-conv-target-size" class="form-select">
+                      <option value="0" selected data-i18n="sizeNoLimit">Original / No Limit</option>
+                      <option value="500" data-i18n="size500Kb">Under 500 KB</option>
+                      <option value="1024" data-i18n="size1Mb">Under 1 MB</option>
+                      <option value="2048" data-i18n="size2Mb">Under 2 MB</option>
+                      <option value="4096" data-i18n="size4Mb">Under 4 MB</option>
+                      <option value="custom" data-i18n="sizeCustom">Custom Size (MB)...</option>
+                    </select>
+                  </div>
+
+                  <div id="img-conv-custom-size-group" class="control-group" style="display: none;">
+                    <label class="control-label" for="img-conv-custom-size" data-i18n="customSizeLabel">Max Size (MB)</label>
+                    <input type="number" id="img-conv-custom-size" class="form-control" min="0.1" max="100" step="0.1" value="2">
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 18px;">
+                  <button id="img-conv-btn" class="btn btn-primary" style="flex: 1;" disabled>
+                    <span data-i18n="btnConvertImages">Convert Images</span>
+                  </button>
+                  <button id="img-conv-dl-all-btn" class="btn btn-emerald" disabled>
+                    Download All (ZIP)
+                  </button>
+                  <button id="img-conv-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+                </div>
+
+                <div id="img-conv-status" class="status-message" style="margin-top: 10px;">Select images above to begin.</div>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title" data-i18n="imgConvCardPreview">Converted Images Preview</h3>
+              <div id="img-conv-preview" class="preview-list">
+                <div style="grid-column: 1 / -1; text-align: center; color: var(--text-dim); padding: 40px 10px;">
+                  Converted images will display here with file size savings.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 11. PASSPORT PHOTO & ID CARD STUDIO ==================== -->
+        <section id="panel-passport-photo" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="passportTitle">Passport Photo & ID Card Studio</h2>
+            <p data-i18n="passportDesc">Generate standard 3.5×4.5 cm passport photo sheets (8, 16, 24, 32 prints) with cutting guides and merge Front & Back ID cards (Aadhaar / PAN) on single A4 sheets.</p>
+          </div>
+
+          <!-- Sub-mode Selector Tabs -->
+          <div class="mode-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button id="tab-passport-mode" class="btn btn-primary active" style="flex: 1;">📷 Passport Photo Sheet (8/16/32 Grid)</button>
+            <button id="tab-idcard-mode" class="btn btn-secondary" style="flex: 1;">🪪 ID Card Merger (Front & Back A4)</button>
+          </div>
+
+          <!-- Section 1: Passport Mode -->
+          <div id="section-passport-mode">
+            <div class="tool-grid">
+              <div class="glass-card">
+                <h3 class="card-title">Upload Photo & Grid Settings</h3>
+                <div id="pass-photo-dropzone" class="dropzone">
+                  <div class="dropzone-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  </div>
+                  <div class="dropzone-text">
+                    <h4>Select or Drop Passport Photo</h4>
+                    <p>JPG, PNG, WebP supported</p>
+                  </div>
+                  <input type="file" id="pass-photo-file" accept="image/*">
+                </div>
+                <div id="pass-photo-file-info" class="file-info-box" style="display:none; margin-top: 12px;"></div>
+
+                <div class="settings-grid" style="margin-top: 16px;">
+                  <div class="form-group">
+                    <label class="form-label">Number of Copies (Grid)</label>
+                    <select id="pass-photo-grid" class="form-control">
+                      <option value="8" selected>8 Photos (2 Rows × 4 Columns - Standard)</option>
+                      <option value="16">16 Photos (4 Rows × 4 Columns)</option>
+                      <option value="24">24 Photos (6 Rows × 4 Columns)</option>
+                      <option value="32">32 Photos (8 Rows × 4 Columns - Full A4)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Name on Photo (Optional)</label>
+                    <input type="text" id="pass-photo-name" class="form-control" placeholder="e.g. Niraj Kumar">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Date of Photo (Optional)</label>
+                    <input type="date" id="pass-photo-date" class="form-control">
+                  </div>
+
+                  <div class="form-group" style="display: flex; align-items: center; gap: 8px; margin-top: 24px;">
+                    <input type="checkbox" id="pass-photo-border" checked style="width: 18px; height: 18px;">
+                    <label for="pass-photo-border" class="form-label" style="margin-bottom:0; cursor:pointer;">Add Clean Cutting Border Lines</label>
+                  </div>
+                </div>
+
+                <div class="action-btn-group" style="margin-top: 20px;">
+                  <button id="pass-photo-generate-btn" class="btn btn-primary">Generate Sheet</button>
+                  <button id="pass-photo-dl-jpg" class="btn btn-emerald" disabled>Download JPEG</button>
+                  <button id="pass-photo-dl-pdf" class="btn btn-primary" disabled>Download A4 PDF</button>
+                </div>
+                <div id="pass-photo-status" class="status-message" style="margin-top: 10px;">Select a photo above to begin.</div>
+              </div>
+
+              <div class="glass-card">
+                <h3 class="card-title">A4 Sheet Preview</h3>
+                <div style="background: #ffffff; padding: 12px; border-radius: 8px; text-align: center; overflow: auto; max-height: 520px; box-shadow: var(--shadow-sm);">
+                  <canvas id="pass-photo-canvas" style="max-width: 100%; height: auto; display: block; margin: 0 auto;"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: ID Card Mode -->
+          <div id="section-idcard-mode" style="display:none;">
+            <div class="tool-grid">
+              <div class="glass-card">
+                <h3 class="card-title">Upload ID Card Sides</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px;">
+                  <div>
+                    <label class="form-label" style="font-weight: 600;">1. ID Front Side</label>
+                    <div id="idcard-front-dropzone" class="dropzone" style="padding: 20px 10px;">
+                      <span style="font-size: 1.8rem;">🪪</span>
+                      <div class="dropzone-text"><p>Drop Front Image</p></div>
+                      <input type="file" id="idcard-front-file" accept="image/*">
+                    </div>
+                    <div id="idcard-front-preview" style="margin-top: 6px; font-size: 0.78rem; color: var(--text-dim); text-align: center;">No file</div>
+                  </div>
+
+                  <div>
+                    <label class="form-label" style="font-weight: 600;">2. ID Back Side</label>
+                    <div id="idcard-back-dropzone" class="dropzone" style="padding: 20px 10px;">
+                      <span style="font-size: 1.8rem;">🔄</span>
+                      <div class="dropzone-text"><p>Drop Back Image</p></div>
+                      <input type="file" id="idcard-back-file" accept="image/*">
+                    </div>
+                    <div id="idcard-back-preview" style="margin-top: 6px; font-size: 0.78rem; color: var(--text-dim); text-align: center;">No file</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">A4 Alignment Layout</label>
+                  <select id="idcard-layout" class="form-control">
+                    <option value="side-by-side" selected>Side-by-Side (Horizontal Align)</option>
+                    <option value="stacked">Stacked Top-and-Bottom (Vertical)</option>
+                  </select>
+                </div>
+
+                <div class="action-btn-group" style="margin-top: 20px;">
+                  <button id="idcard-generate-btn" class="btn btn-primary">Merge to A4</button>
+                  <button id="idcard-dl-pdf" class="btn btn-emerald" disabled>Download Ready A4 PDF</button>
+                </div>
+                <div id="idcard-status" class="status-message" style="margin-top: 10px;">Upload both front & back sides to merge.</div>
+              </div>
+
+              <div class="glass-card">
+                <h3 class="card-title">Merged A4 Preview</h3>
+                <div style="background: #ffffff; padding: 12px; border-radius: 8px; text-align: center; overflow: auto; max-height: 520px; box-shadow: var(--shadow-sm);">
+                  <canvas id="idcard-canvas" style="max-width: 100%; height: auto; display: block; margin: 0 auto;"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 12. QR CODE & BARCODE STUDIO ==================== -->
+        <section id="panel-qr-barcode" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="qrTitle">QR Code & Barcode Studio</h2>
+            <p data-i18n="qrDesc">100% offline generator for high-resolution QR codes (URLs, text, EPFO tracking, vCards) and standard Code 39 / 128 barcodes with instant PDF & PNG exports.</p>
+          </div>
+
+          <div class="mode-tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button id="tab-qr-gen" class="btn btn-primary active" style="flex: 1;">📱 QR Code Generator</button>
+            <button id="tab-barcode-gen" class="btn btn-secondary" style="flex: 1;">🏷️ Barcode Generator (Code 39)</button>
+          </div>
+
+          <!-- Section QR -->
+          <div id="section-qr-gen">
+            <div class="tool-grid">
+              <div class="glass-card">
+                <h3 class="card-title">QR Code Parameters</h3>
+                
+                <div class="form-group">
+                  <label class="form-label">Data Preset Type</label>
+                  <select id="qr-type-select" class="form-control">
+                    <option value="url">Website URL</option>
+                    <option value="text" selected>Plain Text / Memo</option>
+                    <option value="epfo">EPFO / UAN Tracking Reference</option>
+                    <option value="vcard">Contact Card (vCard)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">QR Content / Text / URL</label>
+                  <textarea id="qr-text-input" class="form-control" rows="3" placeholder="Enter link, reference number, or message..."></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Caption Below QR (Optional)</label>
+                  <input type="text" id="qr-caption-input" class="form-control" placeholder="e.g. Scan to Verify Document - RO Faridabad">
+                </div>
+
+                <div class="settings-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                  <div class="form-group">
+                    <label class="form-label">Size (Pixels)</label>
+                    <select id="qr-size-select" class="form-control">
+                      <option value="256">256 × 256</option>
+                      <option value="512" selected>512 × 512 (HD)</option>
+                      <option value="1024">1024 × 1024 (Ultra)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Foreground</label>
+                    <input type="color" id="qr-color-dark" class="form-control" value="#000000" style="height: 38px; padding: 2px;">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Background</label>
+                    <input type="color" id="qr-color-light" class="form-control" value="#ffffff" style="height: 38px; padding: 2px;">
+                  </div>
+                </div>
+
+                <div class="action-btn-group" style="margin-top: 20px;">
+                  <button id="qr-dl-png" class="btn btn-emerald" disabled>Download PNG</button>
+                  <button id="qr-dl-pdf" class="btn btn-primary" disabled>Export PDF Slip</button>
+                </div>
+                <div id="qr-status" class="status-message" style="margin-top: 10px;">Type above to generate QR in real-time.</div>
+              </div>
+
+              <div class="glass-card">
+                <h3 class="card-title">Live QR Code Preview</h3>
+                <div style="background: #ffffff; padding: 28px; border-radius: 8px; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 320px;">
+                  <div id="qr-render-box" style="display: inline-block;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Barcode -->
+          <div id="section-barcode-gen" style="display:none;">
+            <div class="tool-grid">
+              <div class="glass-card">
+                <h3 class="card-title">Barcode Settings</h3>
+                <div class="form-group">
+                  <label class="form-label">Barcode Standard</label>
+                  <select id="barcode-type-select" class="form-control">
+                    <option value="code39" selected>Code 39 (Standard Office / Logistics)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Barcode Value (Alphanumeric: A-Z, 0-9, - . $ / + %)</label>
+                  <input type="text" id="barcode-text-input" class="form-control" placeholder="e.g. FBD-EPFO-2026-99" value="RO-FBD-2026">
+                </div>
+
+                <div class="action-btn-group" style="margin-top: 20px;">
+                  <button id="barcode-dl-png" class="btn btn-emerald">Download Barcode PNG</button>
+                </div>
+                <div id="barcode-status" class="status-message" style="margin-top: 10px;">Rendered instantly.</div>
+              </div>
+
+              <div class="glass-card">
+                <h3 class="card-title">Barcode Canvas Preview</h3>
+                <div style="background: #ffffff; padding: 28px; border-radius: 8px; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 200px;">
+                  <canvas id="barcode-canvas" style="max-width: 100%;"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 13. CSV / EXCEL TO PDF TABLE ==================== -->
+        <section id="panel-csv-to-pdf" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="csvTitle">CSV / Table Data to PDF Report Generator</h2>
+            <p data-i18n="csvDesc">Transform raw CSV, TSV, or spreadsheet tables into beautifully styled, striped multi-page PDF documents with custom headers and page numbering.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Ingest Data Table</h3>
+              
+              <div id="csv-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4>Select or Drag CSV / TSV File</h4>
+                  <p>Supports .csv, .tsv, .txt tabular files</p>
+                </div>
+                <input type="file" id="csv-file" accept=".csv, .tsv, .txt">
+              </div>
+              <div id="csv-file-info" class="file-info-box" style="display:none; margin-top: 10px;"></div>
+
+              <div class="form-group" style="margin-top: 14px;">
+                <label class="form-label">Or Paste CSV / Tab-Separated Text Directly</label>
+                <textarea id="csv-paste-input" class="form-control" rows="3" placeholder="Name, Role, Department, Contact..."></textarea>
+              </div>
+
+              <div class="settings-grid" style="margin-top: 14px;">
+                <div class="form-group">
+                  <label class="form-label">Document Title</label>
+                  <input type="text" id="csv-doc-title" class="form-control" value="Official Administrative Report">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Orientation</label>
+                  <select id="csv-orientation" class="form-control">
+                    <option value="portrait">Portrait (Standard)</option>
+                    <option value="landscape" selected>Landscape (Wide Tables)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Font Size</label>
+                  <select id="csv-fontsize" class="form-control">
+                    <option value="8">8 pt (Compact Data)</option>
+                    <option value="9" selected>9 pt (Standard)</option>
+                    <option value="11">11 pt (Large Text)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="action-btn-group" style="margin-top: 20px;">
+                <button id="csv-generate-pdf-btn" class="btn btn-primary" disabled>Generate PDF Table</button>
+                <button id="csv-clear-btn" class="btn btn-secondary" disabled>Clear Data</button>
+              </div>
+              <div id="csv-status" class="status-message" style="margin-top: 10px;">Upload a CSV or paste data above.</div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Interactive Table Preview</h3>
+              <div id="csv-table-preview" class="csv-table-scroll">
+                <div style="text-align: center; color: var(--text-dim); padding: 50px 15px;">
+                  Data table columns and rows will appear here.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 14. OFFICIAL RECEIPT & CHALLAN GENERATOR ==================== -->
+        <section id="panel-receipt-generator" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="receiptTitle">Official Receipt & Challan Generator</h2>
+            <p data-i18n="receiptDesc">Create and print official government/office receipts, fee challans, and payment vouchers with auto-numbering, totals in INR, and official RO Faridabad seal.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Receipt Details</h3>
+              
+              <div class="settings-grid">
+                <div class="form-group">
+                  <label class="form-label">Organization Name</label>
+                  <input type="text" id="rcpt-org-name" class="form-control" value="REGIONAL OFFICE, FARIDABAD">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Department / Branch</label>
+                  <input type="text" id="rcpt-org-sub" class="form-control" value="Accounts & Administrative Division">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Receipt / Memo No.</label>
+                  <input type="text" id="rcpt-no" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Date</label>
+                  <input type="date" id="rcpt-date" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Received From (Payer Name)</label>
+                  <input type="text" id="rcpt-payer" class="form-control" placeholder="e.g. M/s ABC Enterprises / Member Name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Reference (UAN / PF No / ID)</label>
+                  <input type="text" id="rcpt-ref" class="form-control" placeholder="e.g. 101234567890">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Payment Mode</label>
+                  <select id="rcpt-pay-mode" class="form-control">
+                    <option value="Online / NEFT / RTGS" selected>Online / NEFT / RTGS</option>
+                    <option value="Cheque / DD">Cheque / Demand Draft</option>
+                    <option value="Cash">Cash</option>
+                    <option value="UPI / QR">UPI / QR Code</option>
+                  </select>
+                </div>
+                <div class="form-group" style="display: flex; align-items: center; gap: 8px; margin-top: 24px;">
+                  <input type="checkbox" id="rcpt-stamp-toggle" checked style="width: 18px; height: 18px;">
+                  <label for="rcpt-stamp-toggle" class="form-label" style="margin-bottom:0; cursor:pointer;">Show Official Seal Stamp</label>
+                </div>
+              </div>
+
+              <h4 style="margin: 18px 0 10px; font-size: 0.95rem; color: var(--text-main);">Itemized Particulars</h4>
+              <div id="rcpt-items-container"></div>
+              
+              <button type="button" id="rcpt-add-item-btn" class="btn btn-secondary" style="margin-top: 8px;">+ Add Particular Row</button>
+
+              <div class="action-btn-group" style="margin-top: 24px;">
+                <button id="rcpt-dl-pdf-btn" class="btn btn-primary">Download Official PDF Receipt</button>
+              </div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Live Receipt Sheet Preview</h3>
+              <div id="rcpt-preview-card" class="receipt-paper-wrapper">
+                <!-- Live rendered by receipt-generator.js -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 15. BATCH FILE RENAMER ==================== -->
+        <section id="panel-batch-renamer" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="renamerTitle">Multi-File Bulk Renamer</h2>
+            <p data-i18n="renamerDesc">Instantly rename dozens of files with smart prefixes, suffixes, date-stamps, find-and-replace, and sequential numbering, exported in a single clean ZIP archive.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Select Files & Renaming Rules</h3>
+              
+              <div id="renamer-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4>Choose or Drop Multiple Files</h4>
+                  <p>Any format: PDFs, Images, Word, Sheets (<span id="renamer-count">0 files</span>)</p>
+                </div>
+                <input type="file" id="renamer-file" multiple>
+              </div>
+
+              <div class="settings-grid" style="margin-top: 16px;">
+                <div class="form-group">
+                  <label class="form-label">Add Prefix</label>
+                  <input type="text" id="renamer-prefix" class="form-control" placeholder="e.g. RO_FBD_">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Add Suffix</label>
+                  <input type="text" id="renamer-suffix" class="form-control" placeholder="e.g. _Verified">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Find String</label>
+                  <input type="text" id="renamer-find" class="form-control" placeholder="Text to replace">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Replace With</label>
+                  <input type="text" id="renamer-replace" class="form-control" placeholder="Replacement text">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Sequential Numbering</label>
+                  <select id="renamer-digits" class="form-control">
+                    <option value="none" selected>No numbering</option>
+                    <option value="1">1, 2, 3...</option>
+                    <option value="2">01, 02, 03...</option>
+                    <option value="3">001, 002, 003...</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Start Number From</label>
+                  <input type="number" id="renamer-start" class="form-control" value="1" min="1">
+                </div>
+              </div>
+
+              <div class="form-group" style="display: flex; align-items: center; gap: 8px; margin-top: 10px;">
+                <input type="checkbox" id="renamer-add-date" style="width: 18px; height: 18px;">
+                <label for="renamer-add-date" class="form-label" style="margin-bottom:0; cursor:pointer;">Append Today's Date Stamp (YYYY-MM-DD)</label>
+              </div>
+
+              <div class="action-btn-group" style="margin-top: 20px;">
+                <button id="renamer-dl-zip-btn" class="btn btn-emerald" disabled>Download Renamed Files (ZIP)</button>
+                <button id="renamer-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+              </div>
+              <div id="renamer-status" class="status-message" style="margin-top: 10px;">Select files to see live renaming preview.</div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Live Renaming Comparison Table</h3>
+              <div style="max-height: 480px; overflow: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+                <table class="file-list-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 45%;">Original File Name</th>
+                      <th style="width: 10%; text-align: center;">➔</th>
+                      <th style="width: 45%; color: var(--accent-emerald);">Renamed Output</th>
+                    </tr>
+                  </thead>
+                  <tbody id="renamer-preview-table">
+                    <tr><td colspan="3" style="text-align: center; color: var(--text-dim); padding: 40px 10px;">No files selected.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== 16. DOCUMENT METADATA CLEANER ==================== -->
+        <section id="panel-metadata-cleaner" class="tool-panel">
+          <div class="tool-header">
+            <h2 data-i18n="metaTitle">Document & Photo Metadata Cleaner</h2>
+            <p data-i18n="metaDesc">Inspect hidden EXIF, camera, GPS location, and PDF metadata. Strip sensitive data with 1-click for guaranteed privacy compliance.</p>
+          </div>
+
+          <div class="tool-grid">
+            <div class="glass-card">
+              <h3 class="card-title">Select Document or Photo</h3>
+              
+              <div id="meta-clean-dropzone" class="dropzone">
+                <div class="dropzone-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 12 15 15 10"/></svg>
+                </div>
+                <div class="dropzone-text">
+                  <h4>Choose or Drag File</h4>
+                  <p>PDF, JPEG, PNG, WebP supported</p>
+                </div>
+                <input type="file" id="meta-clean-file" accept="image/*, application/pdf">
+              </div>
+              <div id="meta-clean-file-info" class="file-info-box" style="display:none; margin-top: 10px;"></div>
+
+              <div class="action-btn-group" style="margin-top: 20px;">
+                <button id="meta-clean-btn" class="btn btn-emerald" disabled>Strip Metadata & Download Clean File</button>
+                <button id="meta-clean-clear-btn" class="btn btn-secondary" disabled>Clear</button>
+              </div>
+              <div id="meta-clean-status" class="status-message" style="margin-top: 10px;">Upload a file to inspect metadata tags.</div>
+            </div>
+
+            <div class="glass-card">
+              <h3 class="card-title">Detected Metadata Tags</h3>
+              <div style="max-height: 480px; overflow: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+                <table class="file-list-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 40%;">Property / Tag</th>
+                      <th style="width: 60%;">Detected Value</th>
+                    </tr>
+                  </thead>
+                  <tbody id="meta-clean-table">
+                    <tr><td colspan="2" style="text-align: center; color: var(--text-dim); padding: 40px 10px;">No file inspected.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <div class="footer-container">
+          <div>
+            Created & Developed by <strong>Niraj Kumar</strong>, Section Supervisor, RO, Faridabad
+          </div>
+          <div class="footer-links">
+            <a href="javascript:void(0)" id="footer-privacy-link">Privacy Policy (गोपनीयता नीति)</a> &bull;
+            <a href="javascript:void(0)" id="footer-terms-link">Terms of Service (नियम)</a> &bull;
+            <span>100% Client-Side &bull; 100% Private & Secure</span>
+          </div>
+        </div>
+      </footer>
+
+    </div> <!-- End .main-wrapper -->
+
+  </div> <!-- End .app-container -->
+
+  <!-- About Creator Modal -->
+  <div id="about-modal-overlay" class="modal-overlay" style="display:none;">
+    <div class="modal-card">
+      <button id="about-modal-close" class="modal-close-btn" title="Close">&times;</button>
+      
+      <div class="modal-header-badge">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+
+      <h3 class="modal-title">OmniConvert Studio</h3>
+      <p class="modal-subtitle">Universal Offline Document & Media Converter Suite</p>
+
+      <div class="creator-card-box">
+        <div class="creator-label-tag">Software Creator</div>
+        <div class="creator-name-bold">Niraj Kumar</div>
+        <div class="creator-title-details">Section Supervisor</div>
+        <div class="creator-office-details">Regional Office (RO), Faridabad</div>
+      </div>
+
+      <div class="modal-features-list">
+        <div class="modal-feat-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>100% Offline / Client-Side:</strong> No internet connection required for document conversion.</span>
+        </div>
+        <div class="modal-feat-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>Complete Privacy:</strong> Zero cloud upload; your files strictly stay on your device.</span>
+        </div>
+        <div class="modal-feat-item">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span><strong>Cross-Platform:</strong> Works as a native Windows application and on any modern browser.</span>
+        </div>
+      </div>
+
+      <button id="about-modal-ok-btn" class="btn btn-primary" style="width: 100%; margin-top: 18px;">Close</button>
+    </div>
+  </div>
+
+  <!-- Download Countdown & Ad Modal (Monetization Engine) -->
+  <div id="download-ad-modal-overlay" class="modal-overlay" style="display:none;">
+    <div class="modal-card download-modal-card">
+      <button id="download-modal-close" class="modal-close-btn" title="Close">&times;</button>
+
+      <div class="download-modal-badge">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </div>
+
+      <h3 class="modal-title">Your File is Ready!</h3>
+      <p class="modal-subtitle" id="download-modal-filename" style="margin-bottom: 12px; font-weight: 600; color: var(--primary);">file.pdf</p>
+
+      <!-- Countdown Indicator -->
+      <div class="download-countdown-box">
+        <div class="countdown-circle">
+          <span id="download-countdown-num">3</span>
+        </div>
+        <div class="countdown-text" id="download-countdown-msg">
+          Starting download in a few seconds...
+        </div>
+      </div>
+
+      <!-- High-CTR Ad Slot -->
+      <div id="ad-slot-download-modal" class="ad-modal-box">
+        <div class="ad-label">SPONSORED ADVERTISEMENT / विज्ञापन</div>
+        <div class="ad-box-responsive" id="ad-content-modal">
+          <div class="ad-sponsor-card">
+            <h4>Support Free Office Tools</h4>
+            <p>100% Free & Private Document Processing. Zero Cloud Storage.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div style="display: flex; gap: 10px; margin-top: 16px;">
+        <button id="download-modal-action-btn" class="btn btn-emerald" style="flex: 1;">
+          ⬇️ Download Now (Skip Wait)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy Policy Modal (AdSense Compliance) -->
+  <div id="privacy-modal-overlay" class="modal-overlay" style="display:none;">
+    <div class="modal-card legal-modal-card">
+      <button id="privacy-modal-close" class="modal-close-btn" title="Close">&times;</button>
+      <h3 class="modal-title">Privacy Policy (गोपनीयता नीति)</h3>
+      <p class="modal-subtitle">OmniConvert Studio • Last Updated: September 2026</p>
+
+      <div class="legal-content-body">
+        <h4>1. 100% Client-Side Privacy Guarantee</h4>
+        <p>OmniConvert Studio is built with extreme privacy in mind. All document conversions (including PDF compression, merging, image processing, OCR, barcode, and receipt generation) execute <strong>100% locally in your web browser</strong> using client-side JavaScript. We do NOT upload, inspect, store, or transmit your files to any remote server or third-party cloud service.</p>
+
+        <h4>2. Data Collection and Usage</h4>
+        <p>We do not collect personal identification information. We do not require account registration, email addresses, or phone numbers to use our tools. Your selected files exist only in your browser's temporary memory (RAM) and are discarded as soon as you close or refresh the page.</p>
+
+        <h4>3. Local Storage</h4>
+        <p>The application stores small preferences (such as your chosen theme - light/dark mode, and interface language - Hindi/English) locally on your device via browser <code>localStorage</code> for your convenience.</p>
+
+        <h4>4. Advertisements & Cookies (Google AdSense / Partners)</h4>
+        <p>When accessed online, third-party vendors, including Google, may use cookies to serve ads based on prior visits to this website or other websites. You may opt out of personalized advertising by visiting Google's Ad Settings (www.google.com/settings/ads).</p>
+
+        <h4>5. Contact Information</h4>
+        <p>Developed and maintained by <strong>Niraj Kumar</strong>, Section Supervisor, Regional Office (RO), Faridabad.</p>
+      </div>
+
+      <button id="privacy-modal-ok-btn" class="btn btn-primary" style="width: 100%; margin-top: 14px;">I Understand (समझ गया)</button>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal (AdSense Compliance) -->
+  <div id="terms-modal-overlay" class="modal-overlay" style="display:none;">
+    <div class="modal-card legal-modal-card">
+      <button id="terms-modal-close" class="modal-close-btn" title="Close">&times;</button>
+      <h3 class="modal-title">Terms of Service (सेवा की शर्तें)</h3>
+      <p class="modal-subtitle">OmniConvert Studio</p>
+
+      <div class="legal-content-body">
+        <h4>1. Acceptance of Terms</h4>
+        <p>By accessing or using OmniConvert Studio, you agree to use the software and online tools in compliance with all applicable laws and government regulations.</p>
+
+        <h4>2. Permitted Use</h4>
+        <p>OmniConvert Studio is provided free of charge for personal, office, and administrative tasks. You may freely use the tools to compress, convert, merge, sign, and organize documents.</p>
+
+        <h4>3. Intellectual Property</h4>
+        <p>All tool layouts, designs, offline scripts, and branding are the intellectual creation of <strong>Niraj Kumar, Section Supervisor, RO, Faridabad</strong>.</p>
+
+        <h4>4. Disclaimer of Warranty</h4>
+        <p>The tools are provided "as is" without warranty of any kind. While all tools utilize standard cryptographic and document standards (PDF-Lib, Tesseract, JSZip), users are advised to verify critical financial and legal documents prior to final submission.</p>
+      </div>
+
+      <button id="terms-modal-ok-btn" class="btn btn-primary" style="width: 100%; margin-top: 14px;">Agree & Close</button>
+    </div>
+  </div>
+
+  <!-- Offline Notice Modal (For Online Forms Hub) -->
+  <div id="offline-modal-overlay" class="modal-overlay" style="display:none;">
+    <div class="modal-card">
+      <button id="offline-modal-close" class="modal-close-btn" title="Close">&times;</button>
+      
+      <div class="offline-icon-circle">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="1" y1="1" x2="23" y2="23"></line>
+          <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path>
+          <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path>
+          <path d="M10.71 5.05A16 16 0 0 1 22.58 9"></path>
+          <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"></path>
+          <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+          <line x1="12" y1="20" x2="12.01" y2="20"></line>
+        </svg>
+      </div>
+
+      <h3 class="modal-title" data-i18n="offlineModalTitle">Internet Connection Required</h3>
+      <p class="modal-subtitle" style="margin-bottom: 14px;">All Type Fillable Form Web Portal</p>
+
+      <div class="offline-card-box">
+        <p style="font-size: 0.88rem; line-height: 1.5;" data-i18n="offlineModalDesc">
+          The 'All Type Fillable Form' portal is hosted online on GitHub. An active internet connection is required to access this web service. Please verify your network connection and try again.
+        </p>
+        <p style="margin-top: 8px; font-size: 0.82rem; color: #ef4444; font-weight: 600;">
+          https://smartwebpagestorage-hub.github.io/all-type-fillable-form/
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-top: 14px;">
+        <button id="offline-modal-retry-btn" class="btn btn-primary" style="flex: 1;" data-i18n="offlineModalRetry">Retry Connection</button>
+        <button id="offline-modal-ok-btn" class="btn btn-secondary" style="flex: 1;" data-i18n="offlineModalClose">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Portal -->
+  <div id="toast-container"></div>
+
+  <!-- Offline Libraries (Local Client-Side) -->
+  <script src="lib/pdf.min.js"></script>
+  <script src="lib/pdf-lib.min.js"></script>
+  <script src="lib/jspdf.umd.min.js"></script>
+  <script src="lib/jszip.min.js"></script>
+  <script src="lib/tesseract.min.js"></script>
+  <script src="lib/qrcode.min.js"></script>
+
+  <!-- Application & Monetization Modules -->
+  <script src="js/ads-config.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/pdf-compress.js"></script>
+  <script src="js/pdf-rotate.js"></script>
+  <script src="js/pdf-delete-pages.js"></script>
+  <script src="js/pdf-extract-pages.js"></script>
+  <script src="js/pdf-watermark.js"></script>
+  <script src="js/pdf-number-pages.js"></script>
+  <script src="js/pdf-annotate.js"></script>
+  <script src="js/pdf-sign.js"></script>
+  <script src="js/pdf-security.js"></script>
+  <script src="js/pdf-to-image.js"></script>
+  <script src="js/image-to-pdf.js"></script>
+  <script src="js/text-to-image.js"></script>
+  <script src="js/text-to-pdf.js"></script>
+  <script src="js/pdf-to-text.js"></script>
+  <script src="js/image-to-text.js"></script>
+  <script src="js/pdf-split.js"></script>
+  <script src="js/image-split.js"></script>
+  <script src="js/pdf-img-merge.js"></script>
+  <script src="js/image-convert.js"></script>
+  <script src="js/passport-photo.js"></script>
+  <script src="js/qr-barcode.js"></script>
+  <script src="js/csv-to-pdf.js"></script>
+  <script src="js/receipt-generator.js"></script>
+  <script src="js/batch-renamer.js"></script>
+  <script src="js/metadata-cleaner.js"></script>
+
+</body>
+</html>
+
+

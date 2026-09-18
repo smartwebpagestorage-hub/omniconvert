@@ -1,0 +1,21 @@
+# OmniConvert Studio - .gitignore
+
+# Windows Binaries & Installers (Not needed on GitHub Pages)
+*.exe
+*.dll
+*.pdb
+*.license
+app.license
+
+# Scripts & Temporary Archives
+*.bat
+*.cmd
+*.zip
+*.log
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
