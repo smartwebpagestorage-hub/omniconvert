@@ -5,7 +5,9 @@
 
 (function() {
   const textInput = document.getElementById('text-to-pdf-body') || document.getElementById('text-to-pdf-content');
+  const dropzone = document.getElementById('text-to-pdf-dropzone');
   const fileUpload = document.getElementById('text-to-pdf-file-upload');
+  const fileInfoEl = document.getElementById('text-to-pdf-file-info');
   const titleInput = document.getElementById('text-to-pdf-title');
   const pageSizeSelect = document.getElementById('text-to-pdf-size') || document.getElementById('text-to-pdf-pagesize');
   const fontSelect = document.getElementById('text-to-pdf-font');
@@ -21,19 +23,75 @@
 
   if (!textInput) return;
 
-  // File upload for TXT or Markdown files
-  if (fileUpload) {
+  async function loadDocumentFile(file) {
+    if (!file) return;
+    const ext = file.name.split('.').pop().toLowerCase();
+    const baseName = file.name.replace(/\.[^/.]+$/, "");
+
+    if (fileInfoEl) {
+      fileInfoEl.innerHTML = `<strong>Imported:</strong> ${file.name} (${typeof formatBytes === 'function' ? formatBytes(file.size) : file.size + ' B'})`;
+      fileInfoEl.style.display = 'block';
+    }
+
+    if (titleInput && !titleInput.value.trim()) {
+      titleInput.value = baseName.replace(/[_-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    }
+    if (filenameInput) {
+      filenameInput.value = baseName;
+    }
+
+    try {
+      if (ext === 'docx') {
+        const arrayBuf = await file.arrayBuffer();
+        let extracted = '';
+        if (window.mammoth) {
+          try {
+            const res = await window.mammoth.extractRawText({ arrayBuffer: arrayBuf });
+            extracted = res.value;
+          } catch (e) {
+            console.warn('Mammoth extraction failed:', e);
+          }
+        }
+        if (!extracted && window.JSZip) {
+          const zip = await window.JSZip.loadAsync(arrayBuf);
+          const docXml = zip.file('word/document.xml');
+          if (docXml) {
+            const xml = await docXml.async('text');
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xml, 'text/xml');
+            const paragraphs = xmlDoc.getElementsByTagName('w:p');
+            const lines = [];
+            for (let i = 0; i < paragraphs.length; i++) {
+              const texts = paragraphs[i].getElementsByTagName('w:t');
+              let pText = '';
+              for (let j = 0; j < texts.length; j++) pText += texts[j].textContent;
+              lines.push(pText);
+            }
+            extracted = lines.join('\n');
+          }
+        }
+        textInput.value = extracted || '';
+      } else {
+        const text = await file.text();
+        textInput.value = text;
+      }
+      updateStats();
+      showToast(`Imported text from "${file.name}"`, 'success');
+    } catch (err) {
+      console.error(err);
+      showToast('Error reading document: ' + err.message, 'error');
+    }
+  }
+
+  // Dropzone setup
+  if (dropzone && fileUpload && typeof setupDropzone === 'function') {
+    setupDropzone(dropzone, fileUpload, (files) => {
+      if (files && files[0]) loadDocumentFile(files[0]);
+    });
+  } else if (fileUpload) {
     fileUpload.addEventListener('change', (e) => {
       const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (evt) => {
-          textInput.value = evt.target.result;
-          updateStats();
-          showToast(`Imported text from "${file.name}"`, 'success');
-        };
-        reader.readAsText(file);
-      }
+      if (file) loadDocumentFile(file);
     });
   }
 
@@ -58,6 +116,8 @@
     clearBtn.addEventListener('click', () => {
       textInput.value = '';
       if (titleInput) titleInput.value = '';
+      if (fileInfoEl) fileInfoEl.style.display = 'none';
+      if (fileUpload) fileUpload.value = '';
       updateStats();
       showToast('Cleared text content', 'info');
     });

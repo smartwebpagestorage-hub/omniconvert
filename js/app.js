@@ -28,28 +28,49 @@ function showToast(message, type = 'info', duration = 3500) {
 // Global Theme Management
 function initTheme() {
   const themeToggle = document.getElementById('theme-toggle');
-  const savedTheme = localStorage.getItem('omni-theme') || 'dark';
+  
+  // Default is 'light' - if user hasn't explicitly set preference in version 3.2+
+  const themeVersion = localStorage.getItem('omni-theme-v');
+  if (!themeVersion) {
+    localStorage.setItem('omni-theme', 'light');
+    localStorage.setItem('omni-theme-v', '3.2');
+  }
 
-  if (savedTheme === 'light') {
+  const savedTheme = localStorage.getItem('omni-theme') || 'light';
+
+  if (savedTheme === 'dark') {
+    document.body.classList.remove('light-theme');
+  } else {
     document.body.classList.add('light-theme');
   }
+
+  function updateThemeMeta() {
+    const isLight = document.body.classList.contains('light-theme');
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', isLight ? '#f8fafc' : '#070a13');
+    }
+  }
+  updateThemeMeta();
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('light-theme');
       const currentTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
       localStorage.setItem('omni-theme', currentTheme);
+      updateThemeMeta();
       showToast(`Switched to ${currentTheme} theme`, 'info', 1500);
     });
   }
 }
 
-// Tab & Flyout Navigation
+// Tab & Flyout Navigation + Home Hub Orchestration
 function initTabs() {
   const navTriggers = document.querySelectorAll('[data-tool]');
   const panels = document.querySelectorAll('.tool-panel');
   const topbarTitle = document.getElementById('active-tool-title');
   const navItemWrappers = document.querySelectorAll('.nav-item-wrapper');
+  const brandLogoBtn = document.getElementById('sidebar-home-btn');
 
   function switchTool(toolId, triggerEl) {
     panels.forEach(p => p.classList.remove('active'));
@@ -62,7 +83,23 @@ function initTabs() {
       targetPanel.classList.add('active');
     }
 
-    if (triggerEl) {
+    // Highlight matching sidebar button or flyout item
+    const targetSidebarBtn = document.querySelector(`.sidebar-btn[data-tool="${toolId}"]`);
+    const targetFlyoutItem = document.querySelector(`.flyout-item[data-tool="${toolId}"]`);
+
+    if (targetSidebarBtn) {
+      targetSidebarBtn.classList.add('active');
+      const parent = targetSidebarBtn.closest('.nav-item-wrapper');
+      if (parent) parent.classList.add('active');
+    } else if (targetFlyoutItem) {
+      targetFlyoutItem.classList.add('active');
+      const parent = targetFlyoutItem.closest('.nav-item-wrapper');
+      if (parent) {
+        parent.classList.add('active');
+        const parentBtn = parent.querySelector('.sidebar-btn');
+        if (parentBtn) parentBtn.classList.add('active');
+      }
+    } else if (triggerEl) {
       triggerEl.classList.add('active');
       const parentWrapper = triggerEl.closest('.nav-item-wrapper');
       if (parentWrapper) {
@@ -73,10 +110,15 @@ function initTabs() {
     }
 
     // Update Topbar Title
-    if (topbarTitle && targetPanel) {
-      const headerH2 = targetPanel.querySelector('.tool-header h2');
-      if (headerH2) {
-        topbarTitle.textContent = headerH2.textContent;
+    if (topbarTitle) {
+      if (toolId === 'home') {
+        const currentLang = localStorage.getItem('omni-lang') || 'en';
+        topbarTitle.textContent = currentLang === 'hi' ? 'स्टूडियो हब (Studio Hub)' : 'Studio Hub';
+      } else if (targetPanel) {
+        const headerH2 = targetPanel.querySelector('.tool-header h2');
+        if (headerH2) {
+          topbarTitle.textContent = headerH2.textContent;
+        }
       }
     }
 
@@ -85,6 +127,17 @@ function initTabs() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // Expose switchTool globally
+  window.omniSwitchTool = switchTool;
+
+  // Clicking App Brand Logo navigates to Home Hub
+  if (brandLogoBtn) {
+    brandLogoBtn.addEventListener('click', () => {
+      switchTool('home');
+    });
+  }
+
+  // Bind all data-tool trigger buttons/cards
   navTriggers.forEach(trigger => {
     trigger.addEventListener('click', (e) => {
       const toolId = trigger.dataset.tool;
@@ -115,6 +168,40 @@ function initTabs() {
     if (!e.target.closest('.nav-item-wrapper')) {
       navItemWrappers.forEach(w => w.classList.remove('flyout-open'));
     }
+  });
+
+  // Support deep-linking via data-initial-tool or URL hash (e.g. #word-to-pdf)
+  const initialTool = document.body.dataset.initialTool || (window.location.hash ? window.location.hash.substring(1) : null);
+  if (initialTool && document.getElementById(`panel-${initialTool}`)) {
+    switchTool(initialTool);
+  }
+
+  // Initialize Home Hub Search & Filters
+  initHomeHub(switchTool);
+}
+
+// Home Hub Category Filter & Tool Dispatcher
+function initHomeHub(switchToolFn) {
+  const categoryPills = document.querySelectorAll('.cat-pill');
+  const cards = document.querySelectorAll('.home-card');
+
+  let activeCategory = 'all';
+
+  function filterCards() {
+    cards.forEach(card => {
+      const toolCategory = card.dataset.category || '';
+      const matchesCategory = (activeCategory === 'all') || (toolCategory === activeCategory);
+      card.style.display = matchesCategory ? 'flex' : 'none';
+    });
+  }
+
+  categoryPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      categoryPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeCategory = pill.dataset.category || 'all';
+      filterCards();
+    });
   });
 }
 
@@ -437,9 +524,7 @@ function initAdSlots() {
   if (!cfg || !cfg.enabled) return;
   if (cfg.onlineOnly && !isOnline) return;
 
-  const topSlot = document.getElementById('ad-slot-top');
   const sidebarSlot = document.getElementById('ad-slot-sidebar');
-  if (topSlot) topSlot.style.display = 'block';
   if (sidebarSlot) sidebarSlot.style.display = 'block';
 }
 
@@ -454,6 +539,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Configure PDF.js worker if available (offline local worker)
   if (window.pdfjsLib) {
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'lib/pdf.worker.min.js';
+  }
+
+  // Register PWA Service Worker for Mobile App Support
+  if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').then((reg) => {
+        console.log('OmniConvert PWA ServiceWorker active:', reg.scope);
+      }).catch((err) => {
+        console.log('ServiceWorker notice:', err);
+      });
+    });
   }
 });
 

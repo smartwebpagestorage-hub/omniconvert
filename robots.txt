@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap Index
+Sitemap: https://omniconvert-niraj.web.app/sitemap.xml

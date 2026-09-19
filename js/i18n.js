@@ -14,7 +14,18 @@ const TRANSLATIONS = {
     privacyBadge: "100% Offline Software",
     aboutBtn: "About",
 
+    // Home Hub & Navigation
+    sidebarHome: "Home",
+    backToHub: "All Tools Hub",
+    homeHeroBadge: "✨ 29+ Free Offline Tools • 100% Client-Side & Private",
+    homeHeroTitlePrefix: "All-in-One",
+    homeHeroTitleHighlight: " Document & Media Studio",
+    homeHeroDesc: "Convert, compress, edit, secure, sign, and organize documents & media directly in your browser. Zero cloud uploads, unlimited file size, lightning fast, and 100% free forever.",
+    homePopularLabel: "⚡ Popular:",
+
     // Navigation Tabs
+    tabWordToPdf: "Word ➔ PDF",
+    tabPdfToWord: "PDF ➔ Word (.docx)",
     tabPdfToImg: "PDF ➔ Image",
     tabImgToPdf: "Image ➔ PDF",
     tabTextToImg: "Text ➔ Image",
@@ -25,6 +36,25 @@ const TRANSLATIONS = {
     tabImgSplit: "Image ➔ Split",
     tabPdfImgMerge: "PDF + Image ➔ Merge",
     tabImgConvert: "Image ➔ Convert",
+
+    // Word to PDF
+    wordToPdfTitle: "Word ➔ PDF Converter",
+    wordToPdfDesc: "Convert Microsoft Word (.docx, .doc) documents into clean, paginated, high-definition PDF files with custom layout & typography.",
+    wordToPdfCardUpload: "Upload Word Document",
+    wordToPdfDropTitle: "Choose or Drag & Drop Word Document",
+    wordToPdfDropSubtitle: "Supports .docx and .doc files (100% Offline)",
+    wordToPdfCardPreview: "Extracted Content Preview",
+    btnExportPdf: "Export as PDF",
+
+    // PDF to Word
+    pdfToWordTitle: "PDF ➔ Word (.docx) Converter",
+    pdfToWordDesc: "Convert PDF documents into editable Microsoft Word (.docx) format with preserved paragraphs, headings, and page flow.",
+    pdfToWordCardUpload: "Upload PDF Document",
+    pdfToWordDropTitle: "Choose or Drag & Drop PDF File",
+    pdfToWordDropSubtitle: "Converts text & layout to editable Word (.docx)",
+    pdfToWordCardPreview: "Extracted Document Preview",
+    btnDownloadDocx: "Download Word (.docx)",
+    btnDownloadTxt: "Download .txt",
 
     // Tool 1: PDF to Image
     pdfToImgTitle: "PDF ➔ Image Converter",
@@ -326,7 +356,18 @@ const TRANSLATIONS = {
     privacyBadge: "100% ऑफ़लाइन सॉफ़्टवेयर",
     aboutBtn: "परिचय",
 
+    // Home Hub & Navigation
+    sidebarHome: "होम",
+    backToHub: "मुख्य हब",
+    homeHeroBadge: "✨ 29+ मुफ़्त ऑफ़लाइन टूल्स • 100% प्राइवेट व सुरक्षित",
+    homeHeroTitlePrefix: "ऑल-इन-वन",
+    homeHeroTitleHighlight: " दस्तावेज़ और मीडिया स्टूडियो",
+    homeHeroDesc: "ब्राउज़र में सीधे पीडीएफ, वर्ड और तस्वीरों को कन्वर्ट, कंप्रेस, एडिट, साइन व सुरक्षित करें। बिना इंटरनेट, 100% प्राइवेट, असीमित फाइल साइज और हमेशा के लिए मुफ़्त।",
+    homePopularLabel: "⚡ लोकप्रिय:",
+
     // Navigation Tabs
+    tabWordToPdf: "वर्ड ➔ पीडीएफ",
+    tabPdfToWord: "पीडीएफ ➔ वर्ड (.docx)",
     tabPdfToImg: "पीडीएफ ➔ इमेज",
     tabImgToPdf: "इमेज ➔ पीडीएफ",
     tabTextToImg: "टेक्स्ट ➔ इमेज",
@@ -337,6 +378,25 @@ const TRANSLATIONS = {
     tabImgSplit: "इमेज ➔ स्प्लिट",
     tabPdfImgMerge: "पीडीएफ + इमेज विलय",
     tabImgConvert: "इमेज ➔ कनवर्टर",
+
+    // Word to PDF
+    wordToPdfTitle: "वर्ड ➔ पीडीएफ कनवर्टर",
+    wordToPdfDesc: "माइक्रोसॉफ्ट वर्ड (.docx, .doc) दस्तावेज़ों को स्वच्छ, उच्च-गुणवत्ता वाले पीडीएफ दस्तावेज़ में बदलें। लेआउट और टाइपोग्राफी अनुकूलित करें।",
+    wordToPdfCardUpload: "वर्ड दस्तावेज़ अपलोड करें",
+    wordToPdfDropTitle: "वर्ड फ़ाइल चुनें या यहाँ खींचें",
+    wordToPdfDropSubtitle: ".docx और .doc फ़ाइलें समर्थित हैं (100% ऑफ़लाइन)",
+    wordToPdfCardPreview: "निकाली गई सामग्री का पूर्वावलोकन",
+    btnExportPdf: "पीडीएफ के रूप में निर्यात करें",
+
+    // PDF to Word
+    pdfToWordTitle: "पीडीएफ ➔ वर्ड (.docx) कनवर्टर",
+    pdfToWordDesc: "पीडीएफ दस्तावेज़ों को संपादन योग्य माइक्रोसॉफ्ट वर्ड (.docx) प्रारूप में बदलें। पैराग्राफ और पृष्ठ क्रम सुरक्षित रहते हैं।",
+    pdfToWordCardUpload: "पीडीएफ दस्तावेज़ अपलोड करें",
+    pdfToWordDropTitle: "पीडीएफ फ़ाइल चुनें या यहाँ खींचें",
+    pdfToWordDropSubtitle: "टेक्स्ट और लेआउट को संपादन योग्य वर्ड (.docx) में बदलता है",
+    pdfToWordCardPreview: "निकाले गए दस्तावेज़ का पूर्वावलोकन",
+    btnDownloadDocx: "वर्ड डाउनलोड करें (.docx)",
+    btnDownloadTxt: "टेक्स्ट डाउनलोड करें (.txt)",
 
     // Tool 1: PDF to Image
     pdfToImgTitle: "पीडीएफ ➔ इमेज कनवर्टर",
@@ -667,6 +727,18 @@ function setLanguage(lang) {
     langToggleBtn.innerHTML = lang === 'en' 
       ? '<span style="font-weight:700;">🌐 हिंदी</span>' 
       : '<span style="font-weight:700;">🌐 English</span>';
+  }
+
+  // Update active topbar title
+  const topbarTitle = document.getElementById('active-tool-title');
+  const activePanel = document.querySelector('.tool-panel.active');
+  if (topbarTitle && activePanel) {
+    if (activePanel.id === 'panel-home') {
+      topbarTitle.textContent = lang === 'hi' ? 'स्टूडियो हब (Studio Hub)' : 'Studio Hub';
+    } else {
+      const h2 = activePanel.querySelector('.tool-header h2');
+      if (h2) topbarTitle.textContent = h2.textContent;
+    }
   }
 
   // Update Document title

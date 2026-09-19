@@ -1,0 +1,19 @@
+{
+  "name": "OmniConvert Studio",
+  "short_name": "OmniConvert",
+  "description": "Universal Document & Media Converter by Niraj Kumar, Section Supervisor, RO, Faridabad",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#090d16",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/icon.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity", "business"]
+}

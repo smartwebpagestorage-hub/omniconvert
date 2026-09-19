@@ -18,7 +18,10 @@ const MIME_TYPES = {
   '.webp': 'image/webp',
   '.ico': 'image/x-icon',
   '.pdf': 'application/pdf',
-  '.txt': 'text/plain; charset=utf-8'
+  '.txt': 'text/plain; charset=utf-8',
+  '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  '.doc': 'application/msword',
+  '.md': 'text/markdown; charset=utf-8'
 };
 
 const server = http.createServer((req, res) => {
