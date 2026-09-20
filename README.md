@@ -9,8 +9,9 @@ Created and Developed with ❤️ by **Niraj Kumar**, Section Supervisor, Region
 
 ## 🌐 Live Web Version
 
-- 🔗 **OmniConvert Studio Web:** [https://smartwebpagestorage-hub.github.io/omniconvert/](https://smartwebpagestorage-hub.github.io/omniconvert/)
-- 🔗 **All-Type Fillable Forms Portal:** [https://smartwebpagestorage-hub.github.io/all-type-fillable-form/](https://smartwebpagestorage-hub.github.io/all-type-fillable-form/)
+- 🔗 **OmniConvert Studio Live (Official):** [https://omniconvert-niraj.web.app/](https://omniconvert-niraj.web.app/)
+- 🔗 **GitHub Repository (Source & Backup):** [https://github.com/smartwebpagestorage-hub/omniconvert](https://github.com/smartwebpagestorage-hub/omniconvert)
+- 🔗 **All-Type Fillable Forms Portal:** [https://sarkari-forms-seva-555.web.app/](https://sarkari-forms-seva-555.web.app/)
 
 ---
 
@@ -55,6 +56,47 @@ Created and Developed with ❤️ by **Niraj Kumar**, Section Supervisor, Region
 OmniConvert Studio processes all files **strictly inside your web browser** using HTML5 and WebAssembly APIs. 
 - **Zero Server Uploads:** Your sensitive office and personal files never leave your computer.
 - **Offline Capable:** Works without an active internet connection.
+
+---
+
+## 💰 Monetization Architecture & Government Service Compliance (AdSense गाइड)
+
+> **महत्वपूर्ण नियम (Golden Rule):**  
+> केंद्रीय/राज्य सरकारी सेवा नियमों (CCS Conduct Rules, Rule 15) के तहत सरकारी कर्मचारी व्यक्तिगत नाम या बैंक खाते में व्यावसायिक/विज्ञापन आय नहीं ले सकते।  
+> इसलिए **तकनीकी विकास (Developer)** और **वित्तीय मुद्रीकरण (Monetization & Payouts)** को पूरी तरह अलग रखा गया है।
+
+### 🏛️ दो खातों का स्पष्ट विभाजन (Separation of Roles):
+
+| खाता प्रकार (Account) | स्वामी / लॉगिन (Owner) | क्या-क्या संभालना है (Responsibilities) |
+| :--- | :--- | :--- |
+| **वित्तीय व मुद्रीकरण (Financial / Monetization)** | **धर्मपत्नी (Wife's Gmail)** | • Google AdSense अकाउंट (`ca-pub-4356289331524516`)<br>• पहचान सत्यापन (Identity & Address PIN Verification)<br>• टैक्स इंफो व पैन कार्ड (Tax PAN Information)<br>• बैंक खाता व भुगतान प्राप्ति (Bank Account & Payouts)<br>• AdSense में दोनों वेबसाइट्स जोड़ना |
+| **तकनीकी व विकास (Technical / Developer)** | **आपका लॉगिन (Niraj Kumar)** | • कोड डेवलपमेंट व स्थानीय IDE<br>• GitHub रिपॉजिटरी (डॉक्यूमेंट व कोड बैकअप)<br>• Firebase होस्टिंग सर्वर (`omniconvert-niraj.web.app`)<br>• Google Search Console (SEO व इंडेक्सिंग) |
+
+---
+
+### 🚀 पत्नी के AdSense लॉगिन में वेबसाइट जोड़ने की चरणबद्ध विधि (Step-by-Step Guide):
+
+1. **सीधा लॉगिन लिंक (Direct Link):**
+   - [Google AdSense Dashboard](https://adsense.google.com/)
+2. **लॉगिन करें:** 
+   - ब्राउज़र में पत्नी की Gmail ID से लॉगिन करें। *(सुझाव: Chrome में पत्नी की ID का अलग ब्राउज़र प्रोफाइल बना लें ताकि अकाउंट मिक्स न हो)।*
+3. **Sites (साइट्स) में जाएं:**
+   - बाएं मेन्यू (Left Sidebar) में **"Sites"** (साइट्स) पर क्लिक करें।
+4. **नई साइट जोड़ें (`+ New site`):**
+   - ऊपर दाईं ओर **`+ New site`** बटन दबाएं।
+   - वेबसाइट का डोमेन दर्ज करें:
+     ```text
+     omniconvert-niraj.web.app
+     ```
+   - **Save** (सुरक्षित करें) पर क्लिक करें।
+5. **साइट वेरिफिकेशन व रिव्यू (Request Review):**
+   - साइट पर पहले ही **AdSense स्क्रिप्ट टैग** और **ads.txt** लाइव हैं:
+     - `ads.txt` लाइव लिंक: `https://omniconvert-niraj.web.app/ads.txt`
+   - AdSense स्क्रीन पर **"I've placed the code / I published the ads.txt file"** चेकबॉक्स पर टिक करें।
+   - **"Next" / "Request review"** (समीक्षा का अनुरोध करें) पर क्लिक करें।
+6. **Auto Ads सक्रिय करें (Recommended):**
+   - Sites लिस्ट में `omniconvert-niraj.web.app` के सामने पेंसिल (Edit) आइकन दबाएं।
+   - **"Auto ads"** को **ON** करें और **"Apply to site"** पर क्लिक करें। Google उपयुक्त स्थानों पर अपने आप विज्ञापन दिखाना शुरू कर देगा।
 
 ---
 
