@@ -25,8 +25,8 @@ const ADS_CONFIG = {
 
   // Google AdSense Configuration
   adsense: {
-    enabled: false, // Set to true after you get AdSense approved
-    clientId: "ca-pub-XXXXXXXXXXXXXXXX", // Replace with your AdSense Publisher ID
+    enabled: true, // Google AdSense active
+    clientId: "ca-pub-4356289331524516", // Official AdSense Publisher ID
     slots: {
       topBanner: "1234567890",
       sidebar: "2345678901",
@@ -54,13 +54,15 @@ const ADS_CONFIG = {
     return true;
   }
 
-  // Load Google AdSense Script if enabled
+  // Load Google AdSense Script if enabled and not already loaded in head
   if (shouldShowAds() && ADS_CONFIG.adsense.enabled && ADS_CONFIG.adsense.clientId.startsWith('ca-pub-')) {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS_CONFIG.adsense.clientId}`;
-    script.crossOrigin = "anonymous";
-    document.head.appendChild(script);
+    if (!document.querySelector('script[src*="pagead2.googlesyndication.com"]')) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS_CONFIG.adsense.clientId}`;
+      script.crossOrigin = "anonymous";
+      document.head.appendChild(script);
+    }
   }
 
   window.ADS_CONFIG = ADS_CONFIG;
